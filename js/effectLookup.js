@@ -28,15 +28,9 @@ function renderEffectLookupPage() {
       </div>
 
       <div id="effectLookupResult" class="effect-result empty">
-        <div class="effect-result-row header-row">
-          <span>Ingredient</span>
-          <span>Magnitude</span>
-          <span>Duration</span>
-        </div>
-
-        <div class="effect-result-list">
-          <p>Select an effect to view matching ingredients.</p>
-        </div>
+        ${getEffectEmptyStateHTML(
+          "Select an effect to view matching ingredients."
+        )}
       </div>
     </section>
   `;
@@ -78,19 +72,10 @@ function initEffectLookup(ingredients) {
     onEmpty: () => {
       selectedEffect = null;
 
-      result.className = "effect-result empty";
-
-      result.innerHTML = `
-        <div class="effect-result-row header-row">
-          <span>Ingredient</span>
-          <span>Magnitude</span>
-          <span>Duration</span>
-        </div>
-
-        <div class="effect-result-list">
-          <p>Select an effect to view matching ingredients.</p>
-        </div>
-      `;
+      renderEffectEmptyState(
+        result,
+        "Select an effect to view matching ingredients."
+      );
     },
 
     onSelect: effectName => {
@@ -202,11 +187,7 @@ function renderEffectDetails(
   result.className = "effect-result";
 
   result.innerHTML = `
-    <div class="effect-result-row header-row">
-      <span>Ingredient</span>
-      <span>Magnitude</span>
-      <span>Duration</span>
-    </div>
+    ${getEffectResultHeaderHTML()}
 
     <div class="effect-result-list">
       ${sortedIngredients.map(item => `
