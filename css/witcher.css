@@ -1,0 +1,123 @@
+/* LoreRim Alchemy Book - modular CSS
+   Source: Pasted code(24).css
+*/
+
+/* =========================
+   WITCHER CONSUMABLES
+========================= */
+
+#witcherConsumablesPage .effect-lookup-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  overflow: visible;
+}
+
+#witcherConsumablesPage .effect-result-list {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.witcher-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(70, 45, 20, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 248, 220, 0.35);
+}
+
+.witcher-controls label,
+#witcherMultiplierDisplay {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(70, 45, 20, 0.4);
+  border-radius: 9px;
+  background: rgba(255, 248, 220, 0.72);
+  font-size: 0.86rem;
+  font-weight: bold;
+}
+
+#witcherMultiplierDisplay {
+  margin: 0;
+  background: rgba(90, 55, 25, 0.14);
+  white-space: nowrap;
+}
+
+#witcherConsumablesPage .effect-search-row {
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem;
+  border: 1px solid rgba(70, 45, 20, 0.35);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+
+#witcherConsumablesPage .custom-dropdown {
+  width: min(75%, 420px);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+#witcherConsumablesPage .book-input {
+  width: 100%;
+  border-radius: 9px;
+  text-align: center;
+}
+
+#witcherConsumablesPage .effect-result {
+  flex: 1;
+  min-height: 0;
+  margin-top: -0.65rem;
+  overflow-y: auto;
+  border-radius: 0 0 12px 12px;
+}
+
+#witcherConsumablesPage .effect-result-row {
+  grid-template-columns: 1.5fr 0.75fr 0.75fr;
+}
+
+.witcher-controls input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 15px;
+  height: 15px;
+  margin-right: 0.4rem;
+
+  border: 1px solid rgba(80, 55, 28, 0.65);
+  border-radius: 3px;
+
+  background: rgba(255, 248, 220, 0.75);
+
+  cursor: pointer;
+  position: relative;
+}
+
+.witcher-controls input[type="checkbox"]:hover {
+  background: rgba(245, 225, 170, 0.95);
+  border-color: rgba(110, 75, 35, 0.85);
+}
+
+.witcher-controls input[type="checkbox"]:checked {
+  background: radial-gradient(circle, #d8b46a 35%, #7a4b20 100%);
+  border-color: rgba(70, 40, 18, 0.9);
+}
+
+.witcher-controls input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  top: -4px;
+
+  color: #2a1b10;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}

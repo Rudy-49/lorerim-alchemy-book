@@ -1,75 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Page Title -->
+  <!-- Title -->
   <title>LoreRim Alchemy Book</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/book-shell.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/dropdowns.css">
+  <link rel="stylesheet" href="css/toc.css">
+  <link rel="stylesheet" href="css/potion-builder.css">
+  <link rel="stylesheet" href="css/potion-database.css">
+  <link rel="stylesheet" href="css/ingredient-lookup.css">
+  <link rel="stylesheet" href="css/effect-lookup.css">
+  <link rel="stylesheet" href="css/witcher.css">
+  <link rel="stylesheet" href="css/responsive-mobile.css">
+
 </head>
 
 <body>
 
-  <!-- =========================
-       MAIN BOOK CONTAINER
-  ========================== -->
+  <!-- Main Book -->
   <main class="app">
-    <section id="book" class="book closed" aria-label="LoreRim Alchemy Book">
+
+    <section
+      id="book"
+      class="book closed"
+      aria-label="LoreRim Alchemy Book"
+    >
 
       <!-- Cover -->
       <button
         id="coverButton"
         class="book-cover"
         type="button"
-        aria-label="Open LoreRim Alchemy Book">
+        aria-label="Open LoreRim Alchemy Book"
+      >
       </button>
 
-      <!-- Open Book Interior -->
+      <!-- Book Interior -->
       <div class="book-inside">
 
-        <!-- Decorative Overlay -->
         <div class="book-frame-overlay"></div>
 
-        <!-- Page Thickness Effect -->
         <div class="page-thickness left"></div>
         <div class="page-thickness right"></div>
 
-        <!-- Flip Animation Overlay -->
-        <div id="pageFlipOverlay" class="page-flip-overlay"></div>
+        <div
+          id="pageFlipOverlay"
+          class="page-flip-overlay"
+        ></div>
 
-        <!-- Previous Page Button -->
+        <!-- Previous Page -->
         <button
           id="prevPage"
           class="nav-btn left"
           type="button"
-          aria-label="Previous page">
+          aria-label="Previous page"
+        >
           <span>‹</span>
         </button>
 
         <!-- Left Page -->
         <section class="page left-page">
-          <div class="page-inner" id="leftPageInner">
+          <div
+            class="page-inner"
+            id="leftPageInner"
+          >
             <div id="leftPageContent"></div>
           </div>
         </section>
 
         <!-- Right Page -->
         <section class="page right-page">
-          <div class="page-inner" id="rightPageInner">
+          <div
+            class="page-inner"
+            id="rightPageInner"
+          >
             <div id="rightPageContent"></div>
           </div>
         </section>
 
-        <!-- Next Page Button -->
+        <!-- Next Page -->
         <button
           id="nextPage"
           class="nav-btn right"
           type="button"
-          aria-label="Next page">
+          aria-label="Next page"
+        >
           <span>›</span>
         </button>
 
@@ -77,35 +101,24 @@
     </section>
   </main>
 
-
-  <!-- =========================
-       CORE HELPERS / STORAGE
-  ========================== -->
+  <!-- Core -->
   <script src="js/helpers.js"></script>
   <script src="js/storage.js"></script>
 
-
-  <!-- =========================
-       DATABASE / LOOKUPS
-  ========================== -->
+  <!-- Lookups -->
   <script src="js/potionDatabase.js"></script>
   <script src="js/ingredientLookup.js"></script>
   <script src="js/effectLookup.js"></script>
 
+  <!-- Data -->
   <script src="data/ingredients.js"></script>
   <script src="data/effects.js"></script>
 
-
-  <!-- =========================
-       FEATURES
-  ========================== -->
+  <!-- Features -->
   <script src="js/potionBuilder.js"></script>
   <script src="js/witcherConsumables.js"></script>
 
-
-  <!-- =========================
-       NAVIGATION / APP INIT
-  ========================== -->
+  <!-- App -->
   <script src="js/navigation.js"></script>
   <script src="js/app.js"></script>
 

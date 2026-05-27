@@ -1,0 +1,142 @@
+/* LoreRim Alchemy Book - modular CSS
+   Source: Pasted code(24).css
+*/
+
+/* =========================
+   INGREDIENT LOOKUP
+========================= */
+
+.ingredient-lookup-panel {
+  align-content: start;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(300px, 46%) auto;
+  gap: 1.2rem;
+}
+
+.ingredient-lookup-panel h2 {
+  margin-bottom: 18px;
+}
+
+.ingredient-image-box {
+  flex: 1 1 auto;
+
+  width: 100%;
+  min-height: 240px;    
+  max-height: 52vh;   
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  padding: 12px;
+
+  border: 1px solid rgba(70,45,20,.35);
+  border-radius: 12px;
+
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,.06),
+      transparent 70%),
+    rgba(255,248,220,.35);
+
+  box-shadow:
+    inset 0 0 25px rgba(80,48,18,.2),
+    0 4px 12px rgba(0,0,0,.15);
+
+  font-style: italic;
+  opacity: .95;
+}
+
+.ingredient-image-box img {
+  width: auto;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  display: block;
+
+  transform: scale(1.1); 
+}
+
+.ingredient-search-card {
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.2rem;
+  padding: 0.6rem;
+  border: 1px solid rgba(70, 45, 20, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 248, 220, 0.55);
+  box-shadow: inset 0 0 12px rgba(80, 48, 18, 0.15);
+}
+
+.ingredient-search-label {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.ingredient-result {
+  width: 80%;
+  max-width: 420px;
+  min-height: 150px;
+  padding: 0.75rem;
+  overflow-y: auto;
+  border: 1px solid rgba(70, 45, 20, 0.35);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  background: rgba(255, 248, 220, 0.35);
+  text-align: center;
+}
+
+.ingredient-selected-name,
+.ingredient-result h3 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.25rem, 1.7vw, 1.75rem);
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.ingredient-stats-row,
+.ingredient-effects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.ingredient-stats-row {
+  margin-bottom: 0.75rem;
+}
+
+.info-box,
+.effect-box {
+  min-height: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
+  border-radius: 8px;
+  background: rgba(90, 55, 25, 0.14);
+  font-size: clamp(0.95rem, 1vw, 1.15rem);
+  text-align: center;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.14);
+}
+
+.info-box strong {
+  font-size: 0.85rem;
+}
+
+.info-box span {
+  font-size: 1rem;
+}

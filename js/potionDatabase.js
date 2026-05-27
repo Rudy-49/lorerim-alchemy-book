@@ -3,6 +3,7 @@
 // =========================
 let lastDeletedPotions = [];
 let undoDeleteTimer = null;
+let currentDatabaseFilter = "all";
 
 
 // =========================
@@ -234,13 +235,20 @@ function importPotionsJSON(event) {
 // =========================
 // FILTERING / FAVORITES
 // =========================
-function getFilteredPotions() {
+function getPotionType(potion) {
+  if (potion.type) return potion.type;
+
+  return potion.name.toLowerCase().includes("poison")
+    ? "Poison"
+    : "Potion";
+}
+
+function getFilteredPotions(filterOverride = null) {
   const potions = getSavedPotions();
   const searchInput = document.getElementById("potionDatabaseSearch");
-  const filterSelect = document.getElementById("databaseFilterSelect");
 
   const searchText = searchInput ? searchInput.value.toLowerCase().trim() : "";
-  const filterValue = filterSelect ? filterSelect.value : "all";
+  const filterValue = filterOverride || currentDatabaseFilter || "all";
 
   return potions
     .filter(potion => {
@@ -252,7 +260,7 @@ function getFilteredPotions() {
       const matchesFilter =
         filterValue === "all" ||
         (filterValue === "favorites" && potion.favorite) ||
-        potion.type === filterValue;
+        getPotionType(potion) === filterValue;
 
       return matchesSearch && matchesFilter;
     })
@@ -279,12 +287,12 @@ function toggleFavoritePotion(potionId) {
 // =========================
 // POTION LIST RENDER
 // =========================
-function updatePotionList() {
+function updatePotionList(filterOverride = null) {
   const listContainer = document.getElementById("potionDatabaseList");
   if (!listContainer) return;
 
   const potions = getSavedPotions();
-  const filtered = getFilteredPotions();
+  const filtered = getFilteredPotions(filterOverride);
 
   updateDatabaseCounts();
 
@@ -356,7 +364,9 @@ function updatePotionList() {
 // DATABASE PAGE RENDER
 // =========================
 function renderPotionDatabasePage() {
-  rightPageContent.innerHTML = `
+  const targetPage = isMobileView() ? leftPageContent : rightPageContent;
+
+  targetPage.innerHTML = `
     <section class="lookup-panel potion-database-panel">
       <h2>Potion Database</h2>
 
@@ -399,8 +409,21 @@ function renderPotionDatabasePage() {
   document.getElementById("potionDatabaseSearch")
     ?.addEventListener("input", updatePotionList);
 
-  document.getElementById("databaseFilterSelect")
-    ?.addEventListener("change", updatePotionList);
+  const filterSelect = document.getElementById("databaseFilterSelect");
+
+  if (filterSelect) {
+    filterSelect.value = currentDatabaseFilter;
+
+    filterSelect.addEventListener("change", event => {
+      currentDatabaseFilter = event.target.value;
+      updatePotionList(currentDatabaseFilter);
+    });
+
+    filterSelect.addEventListener("input", event => {
+      currentDatabaseFilter = event.target.value;
+      updatePotionList(currentDatabaseFilter);
+    });
+  }
 
   document.getElementById("selectAllPotionsBtn")
     ?.addEventListener("click", toggleSelectAllPotions);

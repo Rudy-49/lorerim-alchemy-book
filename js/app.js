@@ -63,10 +63,14 @@ const spreads = [
           <span class="toc-page-num">8</span>
         </button>
 
+        <p class="toc-footer-note">
+          Tap an entry to navigate
+        </p>
+
         <div class="toc-version">
           Built for <strong>LoreRim 4.5.3</strong>
         </div>
-        
+
       </div>
     `,
     right: `

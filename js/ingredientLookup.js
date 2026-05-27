@@ -108,21 +108,39 @@ function initIngredientLookup(ingredients) {
     input.value = name;
     dropdown.classList.remove("show");
 
+    setTimeout(() => {
+      input.closest(".ingredient-search-card")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 100);
+
+    document.body.classList.remove("keyboard-open");
+
     if (!ingredient) return;
 
     renderIngredientDetails(ingredient, imageBox, result);
   }
 
 
-  // Search events
+  // =========================
+  // INPUT EVENTS
+  // =========================
   input.addEventListener("focus", () => {
+    setTimeout(() => {
+      input.closest(".ingredient-search-card")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 350);
+
     input.select();
     showDropdown("");
   });
 
   input.addEventListener("click", () => {
     input.select();
-    showDropdown("");
+    showDropdown(input.value);
   });
 
   input.addEventListener("input", () => {
@@ -136,22 +154,49 @@ function initIngredientLookup(ingredients) {
     }
   });
 
+  input.addEventListener("blur", () => {
+    setTimeout(() => {
+      dropdown.classList.remove("show");
+      document.body.classList.remove("keyboard-open");
+    }, 200);
+  });
 
-  // Dropdown selection
+
+  // =========================
+  // MOBILE SAFE DROPDOWN
+  // =========================
+  let pointerStartY = 0;
+  let pointerStartX = 0;
+
   dropdown.addEventListener("pointerdown", event => {
+    pointerStartY = event.clientY;
+    pointerStartX = event.clientX;
+  });
+
+  dropdown.addEventListener("pointerup", event => {
     const option = event.target.closest(".dropdown-option");
 
     if (!option) return;
 
+    const movedY = Math.abs(event.clientY - pointerStartY);
+    const movedX = Math.abs(event.clientX - pointerStartX);
+
+    // allow scrolling without auto-selecting
+    if (movedY > 10 || movedX > 10) return;
+
     event.preventDefault();
+
     selectIngredient(option.dataset.name);
   });
 
 
-  // Close dropdown outside click
+  // =========================
+  // OUTSIDE CLICK
+  // =========================
   document.addEventListener("click", event => {
     if (!event.target.closest(".custom-dropdown")) {
       dropdown.classList.remove("show");
+      document.body.classList.remove("keyboard-open");
     }
   });
 }

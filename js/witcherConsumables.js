@@ -41,6 +41,7 @@ function renderWitcherConsumablesPage() {
             placeholder="Search primary effect..."
             autocomplete="off"
           />
+
           <div id="witcherDropdownMenu" class="dropdown-menu"></div>
         </div>
       </div>
@@ -53,7 +54,7 @@ function renderWitcherConsumablesPage() {
         </div>
 
         <div class="effect-result-list">
-          <p>Search an effect.</p>
+          <p>Select a primary effect to see matching ingredients.</p>
         </div>
       </div>
     </section>
@@ -89,7 +90,11 @@ function initWitcherDropdown(primaryEffects) {
     dropdown.innerHTML = primaryEffects
       .filter(effect => effect.toLowerCase().includes(search))
       .map(effect => `
-        <button class="dropdown-option" type="button" data-name="${escapeHTML(effect)}">
+        <button
+          class="dropdown-option"
+          type="button"
+          data-name="${escapeHTML(effect)}">
+
           ${escapeHTML(effect)}
         </button>
       `).join("");
@@ -97,27 +102,115 @@ function initWitcherDropdown(primaryEffects) {
     dropdown.classList.add("show");
   }
 
-  input.addEventListener("focus", () => showDropdown(""));
-  input.addEventListener("click", () => showDropdown(""));
+  function resetWitcherResults() {
+    const results = document.getElementById("witcherResults");
+
+    if (!results) return;
+
+    results.className = "effect-result empty";
+
+    results.innerHTML = `
+      <div class="effect-result-row header-row">
+        <span>Ingredient</span>
+        <span>Magnitude</span>
+        <span>Duration</span>
+      </div>
+
+      <div class="effect-result-list">
+        <p>Select a primary effect to see matching ingredients.</p>
+      </div>
+    `;
+  }
+
+  function selectEffect(effectName) {
+    input.value = effectName;
+
+    dropdown.classList.remove("show");
+    document.body.classList.remove("keyboard-open");
+
+    updateWitcherConsumablesResults();
+
+    setTimeout(() => {
+      input.closest(".effect-search-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 100);
+  }
+
+  // =========================
+  // INPUT EVENTS
+  // =========================
+  input.addEventListener("focus", () => {
+    setTimeout(() => {
+      input.closest(".effect-search-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 350);
+
+    input.select();
+    showDropdown("");
+  });
+
+  input.addEventListener("click", () => {
+    input.select();
+    showDropdown(input.value);
+  });
 
   input.addEventListener("input", () => {
-    showDropdown(input.value);
+    const value = input.value.trim();
+
+    showDropdown(value);
+
+    if (value === "") {
+      resetWitcherResults();
+      return;
+    }
+
     updateWitcherConsumablesResults();
   });
 
+  input.addEventListener("blur", () => {
+    setTimeout(() => {
+      dropdown.classList.remove("show");
+      document.body.classList.remove("keyboard-open");
+    }, 200);
+  });
+
+  // =========================
+  // MOBILE SAFE DROPDOWN
+  // =========================
+  let pointerStartY = 0;
+  let pointerStartX = 0;
+
   dropdown.addEventListener("pointerdown", event => {
+    pointerStartY = event.clientY;
+    pointerStartX = event.clientX;
+  });
+
+  dropdown.addEventListener("pointerup", event => {
     const option = event.target.closest(".dropdown-option");
     if (!option) return;
 
-    input.value = option.dataset.name;
-    dropdown.classList.remove("show");
+    const movedY = Math.abs(event.clientY - pointerStartY);
+    const movedX = Math.abs(event.clientX - pointerStartX);
 
-    updateWitcherConsumablesResults();
+    // allow scrolling without selecting
+    if (movedY > 10 || movedX > 10) return;
+
+    event.preventDefault();
+
+    selectEffect(option.dataset.name);
   });
 
+  // =========================
+  // OUTSIDE CLICK
+  // =========================
   document.addEventListener("click", event => {
     if (!event.target.closest(".custom-dropdown")) {
       dropdown.classList.remove("show");
+      document.body.classList.remove("keyboard-open");
     }
   });
 }
@@ -184,14 +277,15 @@ function updateWitcherConsumablesResults() {
 
   if (!input || !results || !multiplierDisplay) return;
 
-  const selectedEffect = input.value;
+  const selectedEffect = input.value.trim();
   const multiplier = getWitcherConsumableMultiplier();
-  const matchingIngredients = getMatchingWitcherIngredients(selectedEffect, multiplier);
 
-  multiplierDisplay.textContent = `Current magnitude multiplier: ×${multiplier}`;
+  multiplierDisplay.textContent =
+    `Current magnitude multiplier: ×${multiplier}`;
 
-  if (!matchingIngredients.length) {
+  if (!selectedEffect) {
     results.className = "effect-result empty";
+
     results.innerHTML = `
       <div class="effect-result-row header-row">
         <span>Ingredient</span>
@@ -203,10 +297,33 @@ function updateWitcherConsumablesResults() {
         <p>Select a primary effect to see matching ingredients.</p>
       </div>
     `;
+
+    return;
+  }
+
+  const matchingIngredients =
+    getMatchingWitcherIngredients(selectedEffect, multiplier);
+
+  if (!matchingIngredients.length) {
+    results.className = "effect-result empty";
+
+    results.innerHTML = `
+      <div class="effect-result-row header-row">
+        <span>Ingredient</span>
+        <span>Magnitude</span>
+        <span>Duration</span>
+      </div>
+
+      <div class="effect-result-list">
+        <p>No matching ingredients found.</p>
+      </div>
+    `;
+
     return;
   }
 
   results.className = "effect-result";
+
   results.innerHTML = `
     <div class="effect-result-row header-row">
       <span>Ingredient</span>

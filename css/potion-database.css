@@ -1,0 +1,230 @@
+/* LoreRim Alchemy Book - modular CSS
+   Source: Pasted code(24).css
+*/
+
+/* =========================
+   POTION DATABASE
+========================= */
+
+.potion-database-panel {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden !important;
+}
+
+.potion-database-panel h2 {
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.database-search-row {
+  width: 100%;
+}
+
+.database-search-row .book-input {
+  width: 100%;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.database-toolbar-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+}
+
+.database-toolbar-left,
+.database-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.database-toolbar-row button,
+.database-filter-select {
+  height: 32px;
+  border: 1px solid rgba(70, 45, 20, 0.5);
+  border-radius: 8px;
+  background: rgba(255, 248, 220, 0.85);
+  color: #2a1b10;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.database-toolbar-row button {
+  padding: 0 0.65rem;
+  font-size: 0.78rem;
+}
+
+.database-filter-select {
+  min-width: 105px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.85rem;
+}
+
+.database-toolbar-row button:hover,
+.database-filter-select:focus {
+  background: rgba(255, 248, 220, 1);
+}
+
+.database-filter-select:focus {
+  outline: none;
+  border-color: rgba(120, 75, 30, 0.7);
+}
+
+.potion-database-list {
+  flex: 1 1 auto;
+  height: 0;
+  min-height: 0;
+  padding: 0.75rem 0.5rem 0.75rem 0.75rem;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  border: 1px solid rgba(70, 45, 20, 0.35);
+  border-radius: 0 0 10px 10px;
+  background: rgba(255, 248, 220, 0.35);
+}
+
+.database-empty-state {
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.75;
+}
+
+.saved-potion-card,
+.potion-card {
+  position: relative;
+  margin-bottom: 0.65rem;
+  padding: 0.75rem 2.5rem 0.75rem 2rem;
+  border: 1px solid rgba(90, 63, 34, 0.45);
+  border-left: 4px solid rgba(70, 90, 45, 0.75);
+  border-radius: 10px;
+  background: rgba(255, 248, 220, 0.45);
+  box-shadow:
+    inset 0 0 8px rgba(80, 48, 18, 0.12),
+    0 2px 6px rgba(30, 20, 12, 0.18);
+}
+
+.saved-potion-card h3 {
+  margin: 0 0 0.35rem;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.saved-potion-card p {
+  margin: 0.2rem 0;
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.saved-potion-content h3 {
+  padding-right: 1.8rem;
+}
+
+.saved-potion-card.favorited {
+  background: rgba(232, 205, 126, 0.25);
+  border-color: rgba(216, 162, 29, 0.65);
+  box-shadow:
+    0 2px 6px rgba(30, 20, 12, 0.15),
+    0 0 8px rgba(224, 184, 79, 0.25);
+}
+
+.potion-select-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  left: 0.65rem;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(80, 55, 28, 0.65);
+  border-radius: 3px;
+  background: rgba(255, 248, 220, 0.75);
+  cursor: pointer;
+}
+
+.potion-select-checkbox:hover {
+  background: rgba(245, 225, 170, 0.95);
+  border-color: rgba(110, 75, 35, 0.85);
+}
+
+.potion-select-checkbox:checked {
+  background: radial-gradient(circle, #d8b46a 35%, #7a4b20);
+  border-color: rgba(70, 40, 18, 0.9);
+}
+
+.potion-select-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  top: -4px;
+  color: #2a1b10;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.favorite-potion-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.6rem;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: rgba(90, 63, 34, 0.5);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease, text-shadow 0.15s ease;
+}
+
+.favorite-potion-btn:hover {
+  color: #b8860b;
+  transform: scale(1.15);
+}
+
+.undo-delete-toast {
+  position: absolute;
+  top: 2.2%;
+  right: 3.5%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(216, 180, 106, 0.55);
+  border-radius: 10px;
+  background: rgba(40, 24, 12, 0.94);
+  color: #f1dfb7;
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.30);
+}
+
+.undo-delete-toast button {
+  padding: 0.18rem 0.5rem;
+  border: 1px solid rgba(216, 180, 106, 0.75);
+  border-radius: 6px;
+  background: rgba(255, 248, 220, 0.9);
+  color: #2a1b10;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.undo-delete-toast button:hover {
+  background: #fff4cf;
+}

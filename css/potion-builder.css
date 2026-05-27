@@ -1,0 +1,198 @@
+/* LoreRim Alchemy Book - modular CSS
+   Source: Pasted code(24).css
+*/
+
+/* =========================
+   POTION BUILDER
+========================= */
+
+.potion-builder-panel {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.potion-builder-panel h2,
+.potion-database-panel h2,
+.ingredient-lookup-panel h2 {
+  margin-top: 0;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.potion-builder-panel h2 {
+  margin-bottom: clamp(10px, 1.5vh, 18px);
+  border-bottom: 2px solid rgba(80, 45, 15, 0.45);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.potion-result-box {
+  width: 100%;
+  min-height: clamp(150px, 23vh, 240px);
+  margin-bottom: clamp(0.6rem, 1.2vh, 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 2px solid rgba(90, 55, 24, 0.55);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at center, rgba(255, 248, 220, 0.45), transparent 70%),
+    linear-gradient(135deg, rgba(110, 72, 32, 0.18), rgba(255, 248, 220, 0.35)),
+    rgba(255, 248, 220, 0.35);
+  text-align: center;
+  box-shadow:
+    inset 0 0 28px rgba(80, 48, 18, 0.28),
+    0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+.potion-result-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.generated-potion-name {
+  margin-bottom: 6px;
+  font-size: clamp(22px, 1.8vw, 28px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.shared-effects-box {
+  min-height: clamp(20px, 3vh, 30px);
+  margin-bottom: 8px;
+  font-size: clamp(13px, 0.95vw, 15px);
+}
+
+.save-potion-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 0.6rem 0;
+  border: none;
+  border-top: 2px solid rgba(90, 55, 24, 0.4);
+  border-radius: 0 0 10px 10px;
+  background: #3a2415;
+  color: #ead8b3;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.save-potion-btn:hover {
+  background: #4b2f1b;
+  transform: translateY(-1px);
+}
+
+.potion-builder-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.potion-ingredient-stack {
+  position: relative;
+  isolation: isolate;
+  width: clamp(420px, 82%, 640px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: visible !important;
+  border: 2px solid rgba(90, 55, 24, 0.55);
+  border-radius: 14px;
+  background: linear-gradient(to bottom, rgba(255, 248, 220, 0.5), rgba(215, 185, 120, 0.25));
+  box-shadow:
+    inset 0 0 22px rgba(90, 55, 24, 0.18),
+    0 5px 12px rgba(0, 0, 0, 0.16);
+}
+
+.potion-ingredient-card,
+.potion-notes-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 105px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 248, 220, 0.22);
+}
+
+.potion-ingredient-card {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(62px, 7vh, 82px);
+  overflow: visible !important;
+  text-align: left;
+}
+
+.potion-notes-card {
+  min-height: clamp(70px, 8vh, 90px);
+  border-top: 1px solid rgba(90, 55, 24, 0.35);
+  background: rgba(255, 248, 220, 0.18);
+}
+
+.potion-ingredient-card + .potion-ingredient-card {
+  border-top: 1px solid rgba(90, 55, 24, 0.35);
+}
+
+.potion-ingredient-card:focus-within {
+  z-index: 1000;
+}
+
+.potion-ingredient-card label,
+.potion-notes-card label {
+  margin: 0;
+  padding: 0.35rem 0.5rem;
+  border-right: 1px solid rgba(90, 55, 24, 0.35);
+  border-bottom: none;
+  color: rgba(55, 32, 14, 0.9);
+  font-size: clamp(12px, 0.85vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.potion-ingredient-card .custom-dropdown {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  z-index: 2;
+  overflow: visible;
+}
+
+.potion-ingredient-card:focus-within .custom-dropdown {
+  z-index: 1001;
+}
+
+.potion-ingredient-card .book-input {
+  width: 100%;
+  min-width: 0;
+}
+
+.potion-ingredient-card .dropdown-menu {
+  z-index: 1002;
+  max-height: clamp(120px, 18vh, 180px);
+}
+
+.potion-notes-input {
+  width: 100%;
+  min-height: 46px;
+  resize: vertical;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(70, 45, 20, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 248, 220, 0.85);
+  color: #2a1b10;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: center;
+}

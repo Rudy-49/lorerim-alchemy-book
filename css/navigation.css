@@ -1,0 +1,59 @@
+/* LoreRim Alchemy Book - modular CSS
+   Source: Pasted code(24).css
+*/
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+.nav-btn {
+  position: absolute;
+  top: 0;
+  z-index: 250;
+  width: clamp(44px, 4vw, 64px);
+  height: clamp(44px, 4vw, 64px);
+  display: grid;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+  background: #e6cf9e;
+  color: #2a1b10;
+  font-family: Georgia, serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  opacity: 0.85;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.nav-btn.left {
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.nav-btn.right {
+  right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.nav-btn:hover:not(:disabled) {
+  opacity: 1;
+  filter: brightness(1.08);
+}
+
+.nav-btn span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.nav-btn.left span {
+  transform: translate(-8px, -8px);
+}
+
+.nav-btn.right span {
+  transform: translate(8px, -8px);
+}
+
+.nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}

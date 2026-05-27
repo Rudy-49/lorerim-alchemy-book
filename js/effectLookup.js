@@ -2,7 +2,9 @@
 // EFFECT LOOKUP PAGE RENDER
 // =========================
 function renderEffectLookupPage() {
-  rightPageContent.innerHTML = `
+  const targetPage = isMobileView() ? leftPageContent : rightPageContent;
+
+  targetPage.innerHTML = `
     <section class="lookup-panel effect-lookup-panel">
       <h2>Effect Lookup</h2>
 
@@ -58,7 +60,9 @@ function initEffectLookup(ingredients) {
   let currentSort = "alphabetical";
 
   const effectMap = buildEffectMap(ingredients);
-  const sortedEffects = [...effectMap.values()].sort((a, b) => a.name.localeCompare(b.name));
+  const sortedEffects = [...effectMap.values()].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 
   function showDropdown(filterText = "") {
     const searchText = filterText.toLowerCase();
@@ -79,6 +83,14 @@ function initEffectLookup(ingredients) {
 
     input.value = name;
     dropdown.classList.remove("show");
+    document.body.classList.remove("keyboard-open");
+
+    setTimeout(() => {
+      input.closest(".effect-search-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 100);
 
     if (!effect) return;
 
@@ -87,28 +99,75 @@ function initEffectLookup(ingredients) {
   }
 
   input.addEventListener("focus", () => {
+    setTimeout(() => {
+      input.closest(".effect-search-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 350);
+
     input.select();
     showDropdown("");
   });
 
   input.addEventListener("click", () => {
     input.select();
-    showDropdown("");
+    showDropdown(input.value);
   });
 
   input.addEventListener("input", () => {
-    showDropdown(input.value);
+    const value = input.value.trim();
 
-    const exactMatch = effectMap.get(input.value.trim().toLowerCase());
+    showDropdown(value);
+
+    if (value === "") {
+      selectedEffect = null;
+      result.className = "effect-result empty";
+      result.innerHTML = `
+        <div class="effect-result-row header-row">
+          <span>Ingredient</span>
+          <span>Magnitude</span>
+          <span>Duration</span>
+        </div>
+
+        <div class="effect-result-list">
+          <p>Select an effect to view matching ingredients.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const exactMatch = effectMap.get(value.toLowerCase());
     if (!exactMatch) return;
 
     selectedEffect = exactMatch;
     renderEffectDetails(selectedEffect, result, currentSort);
   });
 
+  input.addEventListener("blur", () => {
+    setTimeout(() => {
+      dropdown.classList.remove("show");
+      document.body.classList.remove("keyboard-open");
+    }, 200);
+  });
+
+  let pointerStartY = 0;
+  let pointerStartX = 0;
+
   dropdown.addEventListener("pointerdown", event => {
+    pointerStartY = event.clientY;
+    pointerStartX = event.clientX;
+  });
+
+  dropdown.addEventListener("pointerup", event => {
     const option = event.target.closest(".dropdown-option");
     if (!option) return;
+
+    const movedY = Math.abs(event.clientY - pointerStartY);
+    const movedX = Math.abs(event.clientX - pointerStartX);
+
+    // allow scrolling without auto-selecting
+    if (movedY > 10 || movedX > 10) return;
 
     event.preventDefault();
     selectEffect(option.dataset.name);
@@ -121,12 +180,17 @@ function initEffectLookup(ingredients) {
       sortButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
-      if (selectedEffect) renderEffectDetails(selectedEffect, result, currentSort);
+      if (selectedEffect) {
+        renderEffectDetails(selectedEffect, result, currentSort);
+      }
     });
   });
 
   document.addEventListener("click", event => {
-    if (!event.target.closest(".custom-dropdown")) dropdown.classList.remove("show");
+    if (!event.target.closest(".custom-dropdown")) {
+      dropdown.classList.remove("show");
+      document.body.classList.remove("keyboard-open");
+    }
   });
 }
 
@@ -168,11 +232,17 @@ function renderEffectDetails(effect, result, sortBy = "alphabetical") {
   const sortedIngredients = [...effect.ingredients];
 
   if (sortBy === "alphabetical") {
-    sortedIngredients.sort((a, b) => a.ingredientName.localeCompare(b.ingredientName));
+    sortedIngredients.sort((a, b) =>
+      a.ingredientName.localeCompare(b.ingredientName)
+    );
   } else if (sortBy === "magnitude") {
-    sortedIngredients.sort((a, b) => Number(b.magnitude) - Number(a.magnitude));
+    sortedIngredients.sort((a, b) =>
+      Number(b.magnitude) - Number(a.magnitude)
+    );
   } else if (sortBy === "duration") {
-    sortedIngredients.sort((a, b) => Number(b.duration) - Number(a.duration));
+    sortedIngredients.sort((a, b) =>
+      Number(b.duration) - Number(a.duration)
+    );
   }
 
   result.className = "effect-result";

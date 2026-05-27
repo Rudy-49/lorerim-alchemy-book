@@ -96,11 +96,37 @@ function initPotionBuilder() {
     }, 0);
   }
 
+  function snapPotionBuilderToTopIfIdle() {
+    setTimeout(() => {
+      const activeElement = document.activeElement;
+
+      const notesFocused = activeElement === notesInput;
+
+      const inputFocused =
+        activeElement === input1 ||
+        activeElement === input2 ||
+        activeElement === input3;
+
+      const dropdownOpen =
+        dropdown1.classList.contains("show") ||
+        dropdown2.classList.contains("show") ||
+        dropdown3.classList.contains("show");
+
+      if (notesFocused || inputFocused || dropdownOpen) return;
+
+      document.querySelector(".potion-builder-panel")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 350);
+  }
+
   function getEffectNames(ingredient) {
     return (ingredient.effects || []).map(effect => effect.name);
   }
 
   function sharesEffect(a, b) {
+    if (!a || !b) return false;
     return getEffectNames(a).some(effect => getEffectNames(b).includes(effect));
   }
 
@@ -122,12 +148,59 @@ function initPotionBuilder() {
       .sort();
   }
 
+  function isNegativeEffect(effectName) {
+    const effect = effects.find(e => e.name === effectName);
+
+    if (effect) {
+      const typeText = String(
+        effect.type ||
+        effect.category ||
+        effect.school ||
+        ""
+      ).toLowerCase();
+
+      if (
+        typeText.includes("negative") ||
+        typeText.includes("poison") ||
+        typeText.includes("harmful")
+      ) {
+        return true;
+      }
+    }
+
+    const negativeKeywords = [
+      "damage",
+      "ravage",
+      "drain",
+      "weakness",
+      "slow",
+      "paralysis",
+      "fear",
+      "frenzy",
+      "lingering damage"
+    ];
+
+    return negativeKeywords.some(word =>
+      effectName.toLowerCase().includes(word)
+    );
+  }
+
+  function getPotionTypeFromEffects(shared) {
+    return shared.some(isNegativeEffect)
+      ? "Poison"
+      : "Potion";
+  }
+
   function generatePotionName(shared) {
     if (shared.length === 0) return "No valid potion";
-    if (shared.length === 1) return `Potion of ${shared[0]}`;
-    if (shared.length === 2) return `Potion of ${shared[0]} and ${shared[1]}`;
 
-    return `Potion of ${shared.join(", ")}`;
+    const potionType = getPotionTypeFromEffects(shared);
+    const prefix = potionType === "Poison" ? "Poison of" : "Potion of";
+
+    if (shared.length === 1) return `${prefix} ${shared[0]}`;
+    if (shared.length === 2) return `${prefix} ${shared[0]} and ${shared[1]}`;
+
+    return `${prefix} ${shared.join(", ")}`;
   }
 
   function updatePreview() {
@@ -156,6 +229,8 @@ function initPotionBuilder() {
     dropdown2.classList.remove("show");
     dropdown3.classList.remove("show");
 
+    document.body.classList.remove("keyboard-open");
+
     updatePreview();
     focusAndSelect(input1);
   }
@@ -178,12 +253,43 @@ function initPotionBuilder() {
     dropdown.classList.add("show");
   }
 
+  function selectDropdownOption(input, dropdown, option, onSelect) {
+    const ingredient = dropdown.currentList[Number(option.dataset.index)];
+    if (!ingredient) return;
+
+    input.value = ingredient.name;
+    dropdown.classList.remove("show");
+
+    const wasIngredient3 = input === input3;
+
+    onSelect(ingredient);
+    updatePreview();
+
+    if (wasIngredient3) {
+      snapPotionBuilderToTopIfIdle();
+    }
+  }
+
   function setupDropdown(input, dropdown, getList, onSelect) {
     input.addEventListener("focus", () => {
       if (input.disabled) return;
 
+      setTimeout(() => {
+        input.closest(".potion-ingredient-card")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 350);
+
       input.select();
       renderDropdown(dropdown, getList(), input.value);
+    });
+
+    input.addEventListener("blur", () => {
+      setTimeout(() => {
+        dropdown.classList.remove("show");
+        document.body.classList.remove("keyboard-open");
+      }, 200);
     });
 
     input.addEventListener("click", () => {
@@ -196,23 +302,61 @@ function initPotionBuilder() {
     input.addEventListener("input", () => {
       if (input.disabled) return;
 
+      if (input === input1 && input.value.trim() === "") {
+        ingr1 = null;
+        ingr2 = null;
+        ingr3 = null;
+
+        input2.value = "";
+        input3.value = "";
+        input2.disabled = true;
+        input3.disabled = true;
+
+        dropdown2.classList.remove("show");
+        dropdown3.classList.remove("show");
+
+        updatePreview();
+      }
+
+      if (input === input2 && input.value.trim() === "") {
+        ingr2 = null;
+        ingr3 = null;
+
+        input3.value = "";
+        input3.disabled = true;
+
+        dropdown3.classList.remove("show");
+
+        updatePreview();
+      }
+
+      if (input === input3 && input.value.trim() === "") {
+        ingr3 = null;
+        updatePreview();
+      }
+
       renderDropdown(dropdown, getList(), input.value);
     });
 
+    let pointerStartY = 0;
+    let pointerStartX = 0;
+
     dropdown.addEventListener("pointerdown", event => {
+      pointerStartY = event.clientY;
+      pointerStartX = event.clientX;
+    });
+
+    dropdown.addEventListener("pointerup", event => {
       const option = event.target.closest(".dropdown-option");
       if (!option) return;
 
+      const movedY = Math.abs(event.clientY - pointerStartY);
+      const movedX = Math.abs(event.clientX - pointerStartX);
+
+      if (movedY > 10 || movedX > 10) return;
+
       event.preventDefault();
-
-      const ingredient = dropdown.currentList[Number(option.dataset.index)];
-      if (!ingredient) return;
-
-      input.value = ingredient.name;
-      dropdown.classList.remove("show");
-
-      onSelect(ingredient);
-      updatePreview();
+      selectDropdownOption(input, dropdown, option, onSelect);
     });
   }
 
@@ -232,7 +376,8 @@ function initPotionBuilder() {
 
   setupDropdown(input2, dropdown2, () =>
     sortedIngredients.filter(ingredient =>
-      ingredient !== ingr1 && sharesEffect(ingredient, ingr1)
+      ingredient.name !== ingr1?.name &&
+      sharesEffect(ingredient, ingr1)
     ),
     ingredient => {
       ingr2 = ingredient;
@@ -247,8 +392,8 @@ function initPotionBuilder() {
 
   setupDropdown(input3, dropdown3, () =>
     sortedIngredients.filter(ingredient =>
-      ingredient !== ingr1 &&
-      ingredient !== ingr2 &&
+      ingredient.name !== ingr1?.name &&
+      ingredient.name !== ingr2?.name &&
       (sharesEffect(ingredient, ingr1) || sharesEffect(ingredient, ingr2))
     ),
     ingredient => {
@@ -261,27 +406,68 @@ function initPotionBuilder() {
   );
 
   saveBtn.addEventListener("click", () => {
-    const shared = getSharedEffects([ingr1, ingr2, ingr3]);
+    const selectedIngredients = [ingr1, ingr2, ingr3].filter(Boolean);
+
+    const uniqueIngredientNames = new Set(
+      selectedIngredients.map(i => i.name.toLowerCase())
+    );
+
+    if (uniqueIngredientNames.size !== selectedIngredients.length) {
+      alert("Duplicate ingredients are not allowed.");
+      return;
+    }
+
+    const shared = getSharedEffects(selectedIngredients);
 
     if (shared.length === 0) {
       alert("No valid potion.");
       return;
     }
 
+    const potionType = getPotionTypeFromEffects(shared);
+    const potionName = generatePotionName(shared);
+
     const potion = {
       id: Date.now(),
-      name: generatePotionName(shared),
-      ingredients: [ingr1, ingr2, ingr3].filter(Boolean).map(i => i.name),
+      name: potionName,
+      type: potionType,
+      ingredients: selectedIngredients.map(i => i.name),
       notes: notesInput.value,
       favorite: false
     };
 
     const saved = getSavedPotions();
 
+    const newPotionKey = potion.ingredients
+      .map(name => name.toLowerCase())
+      .sort()
+      .join("|");
+
+    const duplicatePotion = saved.some(existingPotion => {
+      const existingKey = existingPotion.ingredients
+        .map(name => name.toLowerCase())
+        .sort()
+        .join("|");
+
+      return existingKey === newPotionKey;
+    });
+
+    if (duplicatePotion) {
+      alert("This ingredient combination is already saved.");
+      return;
+    }
+
     saved.unshift(potion);
     savePotionsToStorage(saved);
-    renderPotionDatabasePage();
     clearPotionBuilder();
+
+    if (isMobileView()) {
+      currentSpread = 1;
+      currentMobileSide = "left";
+      renderSpread();
+    } else {
+      renderPotionDatabasePage();
+    }
   });
 
   document.addEventListener("click", event => {
@@ -290,6 +476,7 @@ function initPotionBuilder() {
     dropdown1.classList.remove("show");
     dropdown2.classList.remove("show");
     dropdown3.classList.remove("show");
+    document.body.classList.remove("keyboard-open");
   });
 
   updatePreview();
