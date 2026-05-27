@@ -60,69 +60,26 @@ function initEffectLookup(ingredients) {
   let currentSort = "alphabetical";
 
   const effectMap = buildEffectMap(ingredients);
+
   const sortedEffects = [...effectMap.values()].sort((a, b) =>
     a.name.localeCompare(b.name)
   );
 
-  function showDropdown(filterText = "") {
-    const searchText = filterText.toLowerCase();
+  createSearchDropdown({
+    input,
+    dropdown,
 
-    dropdown.innerHTML = sortedEffects
-      .filter(effect => effect.name.toLowerCase().includes(searchText))
-      .map(effect => `
-        <button class="dropdown-option" type="button" data-name="${escapeHTML(effect.name)}">
-          ${escapeHTML(effect.name)}
-        </button>
-      `).join("");
+    items: sortedEffects,
 
-    dropdown.classList.add("show");
-  }
+    getLabel: effect => effect.name,
 
-  function selectEffect(name) {
-    const effect = effectMap.get(name.trim().toLowerCase());
+    scrollTargetSelector: ".effect-search-row",
 
-    input.value = name;
-    dropdown.classList.remove("show");
-    document.body.classList.remove("keyboard-open");
-
-    setTimeout(() => {
-      input.closest(".effect-search-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 100);
-
-    if (!effect) return;
-
-    selectedEffect = effect;
-    renderEffectDetails(selectedEffect, result, currentSort);
-  }
-
-  input.addEventListener("focus", () => {
-    setTimeout(() => {
-      input.closest(".effect-search-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 350);
-
-    input.select();
-    showDropdown("");
-  });
-
-  input.addEventListener("click", () => {
-    input.select();
-    showDropdown(input.value);
-  });
-
-  input.addEventListener("input", () => {
-    const value = input.value.trim();
-
-    showDropdown(value);
-
-    if (value === "") {
+    onEmpty: () => {
       selectedEffect = null;
+
       result.className = "effect-result empty";
+
       result.innerHTML = `
         <div class="effect-result-row header-row">
           <span>Ingredient</span>
@@ -134,43 +91,39 @@ function initEffectLookup(ingredients) {
           <p>Select an effect to view matching ingredients.</p>
         </div>
       `;
-      return;
-    }
+    },
 
-    const exactMatch = effectMap.get(value.toLowerCase());
+    onSelect: effectName => {
+      const effect =
+        effectMap.get(effectName.trim().toLowerCase());
+
+      if (!effect) return;
+
+      selectedEffect = effect;
+
+      renderEffectDetails(
+        selectedEffect,
+        result,
+        currentSort
+      );
+    }
+  });
+
+  input.addEventListener("input", () => {
+    const value = input.value.trim();
+
+    const exactMatch =
+      effectMap.get(value.toLowerCase());
+
     if (!exactMatch) return;
 
     selectedEffect = exactMatch;
-    renderEffectDetails(selectedEffect, result, currentSort);
-  });
 
-  input.addEventListener("blur", () => {
-    setTimeout(() => {
-      dropdown.classList.remove("show");
-      document.body.classList.remove("keyboard-open");
-    }, 200);
-  });
-
-  let pointerStartY = 0;
-  let pointerStartX = 0;
-
-  dropdown.addEventListener("pointerdown", event => {
-    pointerStartY = event.clientY;
-    pointerStartX = event.clientX;
-  });
-
-  dropdown.addEventListener("pointerup", event => {
-    const option = event.target.closest(".dropdown-option");
-    if (!option) return;
-
-    const movedY = Math.abs(event.clientY - pointerStartY);
-    const movedX = Math.abs(event.clientX - pointerStartX);
-
-    // allow scrolling without auto-selecting
-    if (movedY > 10 || movedX > 10) return;
-
-    event.preventDefault();
-    selectEffect(option.dataset.name);
+    renderEffectDetails(
+      selectedEffect,
+      result,
+      currentSort
+    );
   });
 
   sortButtons.forEach(button => {
@@ -181,16 +134,13 @@ function initEffectLookup(ingredients) {
       button.classList.add("active");
 
       if (selectedEffect) {
-        renderEffectDetails(selectedEffect, result, currentSort);
+        renderEffectDetails(
+          selectedEffect,
+          result,
+          currentSort
+        );
       }
     });
-  });
-
-  document.addEventListener("click", event => {
-    if (!event.target.closest(".custom-dropdown")) {
-      dropdown.classList.remove("show");
-      document.body.classList.remove("keyboard-open");
-    }
   });
 }
 
@@ -228,7 +178,11 @@ function buildEffectMap(ingredients) {
 // =========================
 // EFFECT RESULT RENDER
 // =========================
-function renderEffectDetails(effect, result, sortBy = "alphabetical") {
+function renderEffectDetails(
+  effect,
+  result,
+  sortBy = "alphabetical"
+) {
   const sortedIngredients = [...effect.ingredients];
 
   if (sortBy === "alphabetical") {
