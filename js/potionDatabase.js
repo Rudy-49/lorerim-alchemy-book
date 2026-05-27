@@ -29,6 +29,7 @@ function toggleSelectAllPotions() {
   });
 
   const selectAllBtn = document.getElementById("selectAllPotionsBtn");
+
   if (selectAllBtn) {
     selectAllBtn.textContent = allSelected ? "Select All" : "Unselect All";
   }
@@ -82,8 +83,11 @@ function showUndoDeleteToast(count) {
     <button id="undoDeleteBtn" type="button">Undo</button>
   `;
 
-  document.querySelector(".potion-database-panel").appendChild(toast);
-  document.getElementById("undoDeleteBtn")?.addEventListener("click", undoDeletePotions);
+  document.querySelector(".potion-database-panel")?.appendChild(toast);
+
+  document
+    .getElementById("undoDeleteBtn")
+    ?.addEventListener("click", undoDeletePotions);
 
   undoDeleteTimer = setTimeout(() => {
     toast.remove();
@@ -98,6 +102,7 @@ function undoDeletePotions() {
   const currentPotions = getSavedPotions();
 
   savePotionsToStorage([...lastDeletedPotions, ...currentPotions]);
+
   lastDeletedPotions = [];
 
   if (undoDeleteTimer) {
@@ -106,6 +111,7 @@ function undoDeletePotions() {
   }
 
   document.getElementById("undoDeleteToast")?.remove();
+
   renderPotionDatabasePage();
 }
 
@@ -153,7 +159,7 @@ function exportPotionsJSON() {
       id: potion.id,
       name: potion.name,
       type: potion.type,
-      ingredients: potion.ingredients,
+      ingredients: Array.isArray(potion.ingredients) ? potion.ingredients : [],
       notes: potion.notes || "",
       favorite: potion.favorite || false
     }))
@@ -238,24 +244,38 @@ function importPotionsJSON(event) {
 function getPotionType(potion) {
   if (potion.type) return potion.type;
 
-  return potion.name.toLowerCase().includes("poison")
+  return String(potion.name || "").toLowerCase().includes("poison")
     ? "Poison"
     : "Potion";
 }
 
-function getFilteredPotions(filterOverride = null) {
+function getFilteredPotions() {
   const potions = getSavedPotions();
   const searchInput = document.getElementById("potionDatabaseSearch");
 
-  const searchText = searchInput ? searchInput.value.toLowerCase().trim() : "";
-  const filterValue = filterOverride || currentDatabaseFilter || "all";
+  const searchText = searchInput
+    ? String(searchInput.value || "").toLowerCase().trim()
+    : "";
+
+  const filterValue = currentDatabaseFilter || "all";
 
   return potions
     .filter(potion => {
+      const ingredients = Array.isArray(potion.ingredients)
+        ? potion.ingredients
+        : [];
+
+      const searchableText = [
+        potion.name || "",
+        potion.type || "",
+        ...ingredients,
+        potion.notes || ""
+      ]
+        .join(" ")
+        .toLowerCase();
+
       const matchesSearch =
-        potion.name.toLowerCase().includes(searchText) ||
-        potion.ingredients.join(" ").toLowerCase().includes(searchText) ||
-        (potion.notes || "").toLowerCase().includes(searchText);
+        searchText === "" || searchableText.includes(searchText);
 
       const matchesFilter =
         filterValue === "all" ||
@@ -285,14 +305,66 @@ function toggleFavoritePotion(potionId) {
 
 
 // =========================
+// DATABASE COUNTS
+// =========================
+function updateDatabaseCounts() {
+  const counts = document.getElementById("databaseCounts");
+  if (!counts) return;
+
+  const potions = getSavedPotions();
+  const favoriteCount = potions.filter(potion => potion.favorite).length;
+
+  counts.innerHTML = `
+    <div>Saved Potions: <strong>${potions.length}</strong></div>
+    <div>Favorites: <strong>${favoriteCount}</strong></div>
+  `;
+}
+
+
+// =========================
+// POTION CARD RENDER
+// =========================
+function getSavedPotionCardHTML(potion) {
+  const ingredients = Array.isArray(potion.ingredients)
+    ? potion.ingredients
+    : [];
+
+  return `
+    <div class="saved-potion-card ${potion.favorite ? "favorited" : ""}" data-id="${potion.id}">
+      <input
+        type="checkbox"
+        class="potion-select-checkbox"
+        data-id="${potion.id}"
+        title="Select potion"
+      />
+
+      <button
+        class="favorite-potion-btn ${potion.favorite ? "favorited" : ""}"
+        type="button"
+        data-id="${potion.id}"
+        title="Favorite">
+        ${potion.favorite ? "★" : "☆"}
+      </button>
+
+      <div class="saved-potion-content">
+        <h3>${escapeHTML(potion.name || "Unnamed Potion")}</h3>
+        <p><strong>Ingredients:</strong> ${ingredients.map(escapeHTML).join(", ")}</p>
+        ${potion.notes ? `<p><strong>Notes:</strong> ${escapeHTML(potion.notes)}</p>` : ""}
+      </div>
+    </div>
+  `;
+}
+
+
+// =========================
 // POTION LIST RENDER
 // =========================
-function updatePotionList(filterOverride = null) {
+function updatePotionList() {
   const listContainer = document.getElementById("potionDatabaseList");
   if (!listContainer) return;
 
   const potions = getSavedPotions();
-  const filtered = getFilteredPotions(filterOverride);
+  const filtered = getFilteredPotions();
 
   updateDatabaseCounts();
 
@@ -306,19 +378,6 @@ function updatePotionList(filterOverride = null) {
     return;
   }
 
-  function updateDatabaseCounts() {
-  const counts = document.getElementById("databaseCounts");
-  if (!counts) return;
-
-  const potions = getSavedPotions();
-  const favoriteCount = potions.filter(potion => potion.favorite).length;
-
-  counts.innerHTML = `
-    <div>Saved Potions: <strong>${potions.length}</strong></div>
-    <div>Favorites: <strong>${favoriteCount}</strong></div>
-  `;
-}
-
   listContainer.innerHTML = filtered.length === 0
     ? `
       <div class="database-empty-state">
@@ -326,30 +385,7 @@ function updatePotionList(filterOverride = null) {
         <span>Try adjusting your search or filter.</span>
       </div>
     `
-    : filtered.map(potion => `
-      <div class="saved-potion-card ${potion.favorite ? "favorited" : ""}" data-id="${potion.id}">
-        <input
-          type="checkbox"
-          class="potion-select-checkbox"
-          data-id="${potion.id}"
-          title="Select potion"
-        />
-
-        <button
-          class="favorite-potion-btn ${potion.favorite ? "favorited" : ""}"
-          type="button"
-          data-id="${potion.id}"
-          title="Favorite">
-          ${potion.favorite ? "★" : "☆"}
-        </button>
-
-        <div class="saved-potion-content">
-          <h3>${escapeHTML(potion.name)}</h3>
-          <p><strong>Ingredients:</strong> ${potion.ingredients.map(escapeHTML).join(", ")}</p>
-          ${potion.notes ? `<p><strong>Notes:</strong> ${escapeHTML(potion.notes)}</p>` : ""}
-        </div>
-      </div>
-    `).join("");
+    : filtered.map(getSavedPotionCardHTML).join("");
 
   document.querySelectorAll(".favorite-potion-btn").forEach(button => {
     button.addEventListener("click", event => {
@@ -406,7 +442,8 @@ function renderPotionDatabasePage() {
     </section>
   `;
 
-  document.getElementById("potionDatabaseSearch")
+  document
+    .getElementById("potionDatabaseSearch")
     ?.addEventListener("input", () => updatePotionList());
 
   const filterSelect = document.getElementById("databaseFilterSelect");
@@ -425,13 +462,16 @@ function renderPotionDatabasePage() {
     });
   }
 
-  document.getElementById("selectAllPotionsBtn")
+  document
+    .getElementById("selectAllPotionsBtn")
     ?.addEventListener("click", toggleSelectAllPotions);
 
-  document.getElementById("deleteSelectedPotionsBtn")
+  document
+    .getElementById("deleteSelectedPotionsBtn")
     ?.addEventListener("click", deleteSelectedPotions);
 
-  document.getElementById("exportPotionsBtn")
+  document
+    .getElementById("exportPotionsBtn")
     ?.addEventListener("click", exportPotionsJSON);
 
   const importBtn = document.getElementById("importPotionsBtn");
