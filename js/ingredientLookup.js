@@ -121,18 +121,7 @@ function initIngredientLookup(ingredients) {
       result
     );
   });
-
-  // =========================
-  // OUTSIDE CLICK
-  // =========================
-  document.addEventListener("click", event => {
-    if (!event.target.closest(".custom-dropdown")) {
-      dropdown.classList.remove("show");
-      document.body.classList.remove("keyboard-open");
-    }
-  });
 }
-
 
 // =========================
 // INGREDIENT DETAILS RENDER
