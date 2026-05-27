@@ -150,17 +150,7 @@ function getMatchingWitcherIngredients(selectedEffect, multiplier) {
 }
 
 function getWitcherEmptyResultsHTML(message) {
-  return `
-    <div class="effect-result-row header-row">
-      <span>Ingredient</span>
-      <span>Magnitude</span>
-      <span>Duration</span>
-    </div>
-
-    <div class="effect-result-list">
-      <p>${escapeHTML(message)}</p>
-    </div>
-  `;
+  return getEffectEmptyStateHTML(message);
 }
 
 function resetWitcherResults(message = "Select a primary effect to see matching ingredients.") {
@@ -205,11 +195,7 @@ function updateWitcherConsumablesResults() {
   results.className = "effect-result";
 
   results.innerHTML = `
-    <div class="effect-result-row header-row">
-      <span>Ingredient</span>
-      <span>Magnitude</span>
-      <span>Duration</span>
-    </div>
+    ${getEffectResultHeaderHTML()}
 
     <div class="effect-result-list">
       ${matchingIngredients.map(item => `

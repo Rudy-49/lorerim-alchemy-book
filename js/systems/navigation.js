@@ -72,16 +72,7 @@ function bindTableOfContents() {
       currentSpread = Number(button.dataset.spread);
 
       if (isMobileView()) {
-        const label = button.textContent.toLowerCase();
-
-        if (
-          label.includes("database") ||
-          label.includes("effect lookup")
-        ) {
-          currentMobileSide = "right";
-        } else {
-          currentMobileSide = "left";
-        }
+        currentMobileSide = button.dataset.side || "left";
       } else {
         currentMobileSide = "left";
       }
