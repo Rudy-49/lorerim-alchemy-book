@@ -81,114 +81,46 @@ function initIngredientLookup(ingredients) {
       a.name.localeCompare(b.name)
     );
 
-  function showDropdown(filterText = "") {
-    const search = filterText.toLowerCase();
+  createSearchDropdown({
+    input,
+    dropdown,
 
-    dropdown.innerHTML = sortedIngredients
-      .filter(ingredient =>
-        ingredient.name.toLowerCase().includes(search)
-      )
-      .map(ingredient => `
-        <button
-          class="dropdown-option"
-          type="button"
-          data-name="${escapeHTML(ingredient.name)}">
+    items: sortedIngredients,
 
-          ${escapeHTML(ingredient.name)}
-        </button>
-      `).join("");
+    getLabel: ingredient => ingredient.name,
 
-    dropdown.classList.add("show");
-  }
+    scrollTargetSelector: ".ingredient-search-card",
 
-  function selectIngredient(name) {
-    const ingredient =
-      ingredientMap.get(name.trim().toLowerCase());
+    onEmpty: () => {
+      result.className = "ingredient-result empty";
+    },
 
-    input.value = name;
-    dropdown.classList.remove("show");
+    onSelect: ingredientName => {
+      const ingredient =
+        ingredientMap.get(ingredientName.trim().toLowerCase());
 
-    setTimeout(() => {
-      input.closest(".ingredient-search-card")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 100);
+      if (!ingredient) return;
 
-    document.body.classList.remove("keyboard-open");
-
-    if (!ingredient) return;
-
-    renderIngredientDetails(ingredient, imageBox, result);
-  }
-
-
-  // =========================
-  // INPUT EVENTS
-  // =========================
-  input.addEventListener("focus", () => {
-    setTimeout(() => {
-      input.closest(".ingredient-search-card")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 350);
-
-    input.select();
-    showDropdown("");
-  });
-
-  input.addEventListener("click", () => {
-    input.select();
-    showDropdown(input.value);
-  });
-
-  input.addEventListener("input", () => {
-    showDropdown(input.value);
-
-    const exactMatch =
-      ingredientMap.get(input.value.trim().toLowerCase());
-
-    if (exactMatch) {
-      renderIngredientDetails(exactMatch, imageBox, result);
+      renderIngredientDetails(
+        ingredient,
+        imageBox,
+        result
+      );
     }
   });
 
-  input.addEventListener("blur", () => {
-    setTimeout(() => {
-      dropdown.classList.remove("show");
-      document.body.classList.remove("keyboard-open");
-    }, 200);
+  input.addEventListener("input", () => {
+    const exactMatch =
+      ingredientMap.get(input.value.trim().toLowerCase());
+
+    if (!exactMatch) return;
+
+    renderIngredientDetails(
+      exactMatch,
+      imageBox,
+      result
+    );
   });
-
-
-  // =========================
-  // MOBILE SAFE DROPDOWN
-  // =========================
-  let pointerStartY = 0;
-  let pointerStartX = 0;
-
-  dropdown.addEventListener("pointerdown", event => {
-    pointerStartY = event.clientY;
-    pointerStartX = event.clientX;
-  });
-
-  dropdown.addEventListener("pointerup", event => {
-    const option = event.target.closest(".dropdown-option");
-
-    if (!option) return;
-
-    const movedY = Math.abs(event.clientY - pointerStartY);
-    const movedX = Math.abs(event.clientX - pointerStartX);
-
-    // allow scrolling without auto-selecting
-    if (movedY > 10 || movedX > 10) return;
-
-    event.preventDefault();
-
-    selectIngredient(option.dataset.name);
-  });
-
 
   // =========================
   // OUTSIDE CLICK
