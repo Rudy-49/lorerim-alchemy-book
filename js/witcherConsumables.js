@@ -47,15 +47,7 @@ function renderWitcherConsumablesPage() {
       </div>
 
       <div id="witcherResults" class="effect-result empty">
-        <div class="effect-result-row header-row">
-          <span>Ingredient</span>
-          <span>Magnitude</span>
-          <span>Duration</span>
-        </div>
-
-        <div class="effect-result-list">
-          <p>Select a primary effect to see matching ingredients.</p>
-        </div>
+        ${getWitcherEmptyResultsHTML("Select a primary effect to see matching ingredients.")}
       </div>
     </section>
   `;
@@ -84,135 +76,26 @@ function initWitcherDropdown(primaryEffects) {
 
   if (!input || !dropdown) return;
 
-  function showDropdown(filter = "") {
-    const search = filter.toLowerCase();
+  createSearchDropdown({
+    input,
+    dropdown,
 
-    dropdown.innerHTML = primaryEffects
-      .filter(effect => effect.toLowerCase().includes(search))
-      .map(effect => `
-        <button
-          class="dropdown-option"
-          type="button"
-          data-name="${escapeHTML(effect)}">
+    items: primaryEffects,
 
-          ${escapeHTML(effect)}
-        </button>
-      `).join("");
+    getLabel: effect => effect,
 
-    dropdown.classList.add("show");
-  }
+    scrollTargetSelector: ".effect-search-row",
 
-  function resetWitcherResults() {
-    const results = document.getElementById("witcherResults");
-
-    if (!results) return;
-
-    results.className = "effect-result empty";
-
-    results.innerHTML = `
-      <div class="effect-result-row header-row">
-        <span>Ingredient</span>
-        <span>Magnitude</span>
-        <span>Duration</span>
-      </div>
-
-      <div class="effect-result-list">
-        <p>Select a primary effect to see matching ingredients.</p>
-      </div>
-    `;
-  }
-
-  function selectEffect(effectName) {
-    input.value = effectName;
-
-    dropdown.classList.remove("show");
-    document.body.classList.remove("keyboard-open");
-
-    updateWitcherConsumablesResults();
-
-    setTimeout(() => {
-      input.closest(".effect-search-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 100);
-  }
-
-  // =========================
-  // INPUT EVENTS
-  // =========================
-  input.addEventListener("focus", () => {
-    setTimeout(() => {
-      input.closest(".effect-search-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 350);
-
-    input.select();
-    showDropdown("");
-  });
-
-  input.addEventListener("click", () => {
-    input.select();
-    showDropdown(input.value);
-  });
-
-  input.addEventListener("input", () => {
-    const value = input.value.trim();
-
-    showDropdown(value);
-
-    if (value === "") {
+    onEmpty: () => {
       resetWitcherResults();
-      return;
-    }
+    },
 
-    updateWitcherConsumablesResults();
-  });
-
-  input.addEventListener("blur", () => {
-    setTimeout(() => {
-      dropdown.classList.remove("show");
-      document.body.classList.remove("keyboard-open");
-    }, 200);
-  });
-
-  // =========================
-  // MOBILE SAFE DROPDOWN
-  // =========================
-  let pointerStartY = 0;
-  let pointerStartX = 0;
-
-  dropdown.addEventListener("pointerdown", event => {
-    pointerStartY = event.clientY;
-    pointerStartX = event.clientX;
-  });
-
-  dropdown.addEventListener("pointerup", event => {
-    const option = event.target.closest(".dropdown-option");
-    if (!option) return;
-
-    const movedY = Math.abs(event.clientY - pointerStartY);
-    const movedX = Math.abs(event.clientX - pointerStartX);
-
-    // allow scrolling without selecting
-    if (movedY > 10 || movedX > 10) return;
-
-    event.preventDefault();
-
-    selectEffect(option.dataset.name);
-  });
-
-  // =========================
-  // OUTSIDE CLICK
-  // =========================
-  document.addEventListener("click", event => {
-    if (!event.target.closest(".custom-dropdown")) {
-      dropdown.classList.remove("show");
-      document.body.classList.remove("keyboard-open");
+    onSelect: () => {
+      updateWitcherConsumablesResults();
     }
   });
+
+  input.addEventListener("input", updateWitcherConsumablesResults);
 }
 
 
@@ -266,6 +149,29 @@ function getMatchingWitcherIngredients(selectedEffect, multiplier) {
     .sort((a, b) => b.magnitude - a.magnitude);
 }
 
+function getWitcherEmptyResultsHTML(message) {
+  return `
+    <div class="effect-result-row header-row">
+      <span>Ingredient</span>
+      <span>Magnitude</span>
+      <span>Duration</span>
+    </div>
+
+    <div class="effect-result-list">
+      <p>${escapeHTML(message)}</p>
+    </div>
+  `;
+}
+
+function resetWitcherResults(message = "Select a primary effect to see matching ingredients.") {
+  const results = document.getElementById("witcherResults");
+
+  if (!results) return;
+
+  results.className = "effect-result empty";
+  results.innerHTML = getWitcherEmptyResultsHTML(message);
+}
+
 
 // =========================
 // WITCHER RESULTS RENDER
@@ -284,20 +190,7 @@ function updateWitcherConsumablesResults() {
     `Current magnitude multiplier: ×${multiplier}`;
 
   if (!selectedEffect) {
-    results.className = "effect-result empty";
-
-    results.innerHTML = `
-      <div class="effect-result-row header-row">
-        <span>Ingredient</span>
-        <span>Magnitude</span>
-        <span>Duration</span>
-      </div>
-
-      <div class="effect-result-list">
-        <p>Select a primary effect to see matching ingredients.</p>
-      </div>
-    `;
-
+    resetWitcherResults();
     return;
   }
 
@@ -305,20 +198,7 @@ function updateWitcherConsumablesResults() {
     getMatchingWitcherIngredients(selectedEffect, multiplier);
 
   if (!matchingIngredients.length) {
-    results.className = "effect-result empty";
-
-    results.innerHTML = `
-      <div class="effect-result-row header-row">
-        <span>Ingredient</span>
-        <span>Magnitude</span>
-        <span>Duration</span>
-      </div>
-
-      <div class="effect-result-list">
-        <p>No matching ingredients found.</p>
-      </div>
-    `;
-
+    resetWitcherResults("No matching ingredients found.");
     return;
   }
 
