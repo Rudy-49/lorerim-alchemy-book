@@ -1,49 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Page Title -->
   <title>LoreRim Alchemy Book</title>
 
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+  <!-- =========================
+       MAIN BOOK CONTAINER
+  ========================== -->
   <main class="app">
     <section id="book" class="book closed" aria-label="LoreRim Alchemy Book">
-      <button id="coverButton" class="book-cover" type="button" aria-label="Open LoreRim Alchemy Book">
-        <span class="cover-click-text">Click to Open</span>
+
+      <!-- Cover -->
+      <button
+        id="coverButton"
+        class="book-cover"
+        type="button"
+        aria-label="Open LoreRim Alchemy Book">
       </button>
 
+      <!-- Open Book Interior -->
       <div class="book-inside">
+
+        <!-- Decorative Overlay -->
         <div class="book-frame-overlay"></div>
+
+        <!-- Page Thickness Effect -->
+        <div class="page-thickness left"></div>
+        <div class="page-thickness right"></div>
+
+        <!-- Flip Animation Overlay -->
         <div id="pageFlipOverlay" class="page-flip-overlay"></div>
-            <button id="prevPage" class="nav-btn left" type="button" aria-label="Previous page">
-                <span>‹</span>
-            </button>
 
+        <!-- Previous Page Button -->
+        <button
+          id="prevPage"
+          class="nav-btn left"
+          type="button"
+          aria-label="Previous page">
+          <span>‹</span>
+        </button>
+
+        <!-- Left Page -->
         <section class="page left-page">
-            <div class="page-inner" id="leftPageInner">
-                <div id="leftPageContent"></div>
-            </div>
+          <div class="page-inner" id="leftPageInner">
+            <div id="leftPageContent"></div>
+          </div>
         </section>
 
+        <!-- Right Page -->
         <section class="page right-page">
-            <div class="page-inner" id="rightPageInner">
-                 <div id="rightPageContent"></div>
-            </div>
+          <div class="page-inner" id="rightPageInner">
+            <div id="rightPageContent"></div>
+          </div>
         </section>
 
-        <button id="nextPage" class="nav-btn right" type="button" aria-label="Next page">
+        <!-- Next Page Button -->
+        <button
+          id="nextPage"
+          class="nav-btn right"
+          type="button"
+          aria-label="Next page">
           <span>›</span>
         </button>
+
       </div>
     </section>
   </main>
 
+
+  <!-- =========================
+       CORE HELPERS / STORAGE
+  ========================== -->
+  <script src="js/helpers.js"></script>
+  <script src="js/storage.js"></script>
+
+
+  <!-- =========================
+       DATABASE / LOOKUPS
+  ========================== -->
+  <script src="js/potionDatabase.js"></script>
+  <script src="js/ingredientLookup.js"></script>
+  <script src="js/effectLookup.js"></script>
+
   <script src="data/ingredients.js"></script>
   <script src="data/effects.js"></script>
+
+
+  <!-- =========================
+       FEATURES
+  ========================== -->
+  <script src="js/potionBuilder.js"></script>
+  <script src="js/witcherConsumables.js"></script>
+
+
+  <!-- =========================
+       NAVIGATION / APP INIT
+  ========================== -->
+  <script src="js/navigation.js"></script>
   <script src="js/app.js"></script>
+
 </body>
 </html>
