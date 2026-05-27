@@ -283,18 +283,6 @@ function toggleFavoritePotion(potionId) {
   updatePotionList();
 }
 
-function updateDatabaseCounts() {
-  const counts = document.getElementById("databaseCounts");
-  if (!counts) return;
-
-  const potions = getSavedPotions();
-  const favoriteCount = potions.filter(potion => potion.favorite).length;
-
-  counts.innerHTML = `
-    <div>Saved Potions: <strong>${potions.length}</strong></div>
-    <div>Favorites: <strong>${favoriteCount}</strong></div>
-  `;
-}
 
 // =========================
 // POTION LIST RENDER
@@ -317,6 +305,19 @@ function updatePotionList(filterOverride = null) {
     `;
     return;
   }
+
+  function updateDatabaseCounts() {
+  const counts = document.getElementById("databaseCounts");
+  if (!counts) return;
+
+  const potions = getSavedPotions();
+  const favoriteCount = potions.filter(potion => potion.favorite).length;
+
+  counts.innerHTML = `
+    <div>Saved Potions: <strong>${potions.length}</strong></div>
+    <div>Favorites: <strong>${favoriteCount}</strong></div>
+  `;
+}
 
   listContainer.innerHTML = filtered.length === 0
     ? `
@@ -406,7 +407,7 @@ function renderPotionDatabasePage() {
   `;
 
   document.getElementById("potionDatabaseSearch")
-    ?.addEventListener("input", updatePotionList);
+    ?.addEventListener("input", () => updatePotionList());
 
   const filterSelect = document.getElementById("databaseFilterSelect");
 
@@ -415,12 +416,12 @@ function renderPotionDatabasePage() {
 
     filterSelect.addEventListener("change", event => {
       currentDatabaseFilter = event.target.value;
-      updatePotionList(currentDatabaseFilter);
+      updatePotionList();
     });
 
     filterSelect.addEventListener("input", event => {
       currentDatabaseFilter = event.target.value;
-      updatePotionList(currentDatabaseFilter);
+      updatePotionList();
     });
   }
 
