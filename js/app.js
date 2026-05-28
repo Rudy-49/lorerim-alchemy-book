@@ -158,16 +158,6 @@ const spreads = [
           </div>
 
           <div class="changelog-entry">
-            <h4>Recent UI Work</h4>
-            <ul>
-              <li>Rebuilt page 8 as a collection list</li>
-              <li>Added Witcher ingredient tracking</li>
-              <li>Added Potion/Witcher filters</li>
-              <li>Improved mobile and scroll behavior</li>
-            </ul>
-          </div>
-
-          <div class="changelog-entry">
             <h4>Coming Next</h4>
             <ul>
               <li>LoreRim 5.0 data migration</li>
