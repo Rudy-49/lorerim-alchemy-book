@@ -121,3 +121,48 @@
   font-weight: bold;
   line-height: 1;
 }
+
+.witcher-table-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 110px 110px;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.5rem;
+}
+
+.witcher-track-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.track-witcher-ingredient-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.65;
+  padding: 0;
+  color: inherit;
+}
+
+.track-witcher-ingredient-btn.tracked {
+  opacity: 1;
+}
+
+.witcher-header-row {
+  background: rgba(120, 95, 55, 0.22);
+  border-top: 1px solid rgba(80, 55, 30, 0.25);
+  border-bottom: 1px solid rgba(80, 55, 30, 0.25);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.15rem;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.witcher-result-row {
+  border-bottom: 1px solid rgba(70, 45, 20, 0.08);
+}

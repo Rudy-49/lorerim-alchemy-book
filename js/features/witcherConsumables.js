@@ -149,11 +149,30 @@ function getMatchingWitcherIngredients(selectedEffect, multiplier) {
     .sort((a, b) => b.magnitude - a.magnitude);
 }
 
-function getWitcherEmptyResultsHTML(message) {
-  return getEffectEmptyStateHTML(message);
+function getWitcherResultHeaderHTML() {
+  return `
+    <div class="witcher-table-row witcher-header-row">
+      <span>Track</span>
+      <span>Ingredient</span>
+      <span>Magnitude</span>
+      <span>Duration</span>
+    </div>
+  `;
 }
 
-function resetWitcherResults(message = "Select a primary effect to see matching ingredients.") {
+function getWitcherEmptyResultsHTML(message) {
+  return `
+    ${getWitcherResultHeaderHTML()}
+
+    <div class="effect-result-list">
+      <p>${escapeHTML(message)}</p>
+    </div>
+  `;
+}
+
+function resetWitcherResults(
+  message = "Select a primary effect to see matching ingredients."
+) {
   const results = document.getElementById("witcherResults");
 
   if (!results) return;
@@ -195,16 +214,74 @@ function updateWitcherConsumablesResults() {
   results.className = "effect-result";
 
   results.innerHTML = `
-    ${getEffectResultHeaderHTML()}
+    ${getWitcherResultHeaderHTML()}
 
     <div class="effect-result-list">
-      ${matchingIngredients.map(item => `
-        <div class="effect-result-row">
-          <span>${escapeHTML(item.name)}</span>
-          <span>${escapeHTML(formatIngredientNumber(item.magnitude))}</span>
-          <span>${escapeHTML(item.duration)}</span>
-        </div>
-      `).join("")}
+      ${matchingIngredients.map(item => {
+        const isTracked =
+          isWitcherIngredientTracked(item.name);
+
+        return `
+          <div class="witcher-table-row witcher-result-row">
+
+            <span class="witcher-track-cell">
+              <button
+                type="button"
+                class="track-witcher-ingredient-btn ${isTracked ? "tracked" : ""}"
+                data-name="${escapeHTML(item.name)}"
+                title="${isTracked
+                  ? "Remove from collection list"
+                  : "Add to collection list"}">
+
+                ${isTracked ? "★" : "☆"}
+
+              </button>
+            </span>
+
+            <span>
+              ${escapeHTML(item.name)}
+            </span>
+
+            <span>
+              ${escapeHTML(
+                formatIngredientNumber(item.magnitude)
+              )}
+            </span>
+
+            <span>
+              ${escapeHTML(item.duration)}
+            </span>
+
+          </div>
+        `;
+      }).join("")}
     </div>
   `;
+
+  document
+    .querySelectorAll(".track-witcher-ingredient-btn")
+    .forEach(button => {
+
+      button.addEventListener("click", event => {
+        event.stopPropagation();
+
+        const ingredientName =
+          event.currentTarget.dataset.name;
+
+        toggleTrackedWitcherIngredient(
+          ingredientName
+        );
+
+        updateWitcherConsumablesResults();
+
+        if (
+          document.getElementById(
+            "ingredientCollectionPage"
+          )
+        ) {
+          renderIngredientCollectionPage();
+        }
+      });
+
+    });
 }

@@ -46,6 +46,8 @@ function renderSpecialPages() {
       renderEffectLookupPage();
     } else if (currentSpread === 3 && currentMobileSide === "left") {
       renderWitcherConsumablesPage();
+    } else if (currentSpread === 3 && currentMobileSide === "right") {
+      renderIngredientCollectionPage();
     }
 
     return;
@@ -59,6 +61,7 @@ function renderSpecialPages() {
     renderEffectLookupPage();
   } else if (currentSpread === 3) {
     renderWitcherConsumablesPage();
+    renderIngredientCollectionPage();
   }
 }
 

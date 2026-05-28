@@ -842,3 +842,88 @@
     font-size: 0.68rem;
   }
 }
+
+@media (max-width: 600px) {
+  #witcherConsumablesPage .witcher-table-row {
+    grid-template-columns: 44px minmax(0, 1.35fr) 0.75fr 0.65fr !important;
+    gap: 0.25rem !important;
+    padding: 0.4rem 0.35rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  #witcherConsumablesPage .witcher-header-row {
+    font-size: 0.72rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  #witcherConsumablesPage .witcher-table-row span,
+  #witcherConsumablesPage .witcher-table-row div {
+    min-width: 0 !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  #witcherConsumablesPage .track-witcher-ingredient-btn {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .collection-top-row {
+    display: grid !important;
+    grid-template-columns: 0.9fr 1fr 1fr 1fr !important;
+    gap: 0.35rem !important;
+    align-items: center !important;
+  }
+
+  .collection-filter-select {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 34px !important;
+    font-size: 0.78rem !important;
+    padding: 0.25rem 0.4rem !important;
+  }
+
+  .collection-counts {
+    display: contents !important;
+  }
+
+  .collection-counts span {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0.35rem 0.25rem !important;
+    font-size: 0.72rem !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  .collection-header-row,
+  .collection-result-row {
+    grid-template-columns: minmax(0, 1.25fr) minmax(86px, 0.75fr) !important;
+  }
+
+  .collection-result-row {
+    font-size: 0.78rem !important;
+  }
+
+  .collection-tag {
+    font-size: 0.68rem !important;
+    padding: 0.08rem 0.35rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  input,
+  select,
+  textarea,
+  .book-input,
+  .potion-notes-input {
+    font-size: 16px !important;
+  }
+
+  .database-search-row .book-input,
+  .effect-search-row .book-input,
+  #witcherConsumablesPage .book-input {
+    font-size: 16px !important;
+  }
+}
