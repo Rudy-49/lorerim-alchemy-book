@@ -29,6 +29,7 @@
   border: 1px solid rgba(70, 45, 20, 0.35);
   border-radius: 12px;
   background: rgba(255, 248, 220, 0.35);
+  margin-bottom: 0.15rem;
 }
 
 .witcher-controls label,
@@ -57,6 +58,7 @@
   border: 1px solid rgba(70, 45, 20, 0.35);
   border-bottom: none;
   border-radius: 12px 12px 0 0;
+  margin-top: 0.15rem;
 }
 
 #witcherConsumablesPage .custom-dropdown {
@@ -165,4 +167,62 @@
 
 .witcher-result-row {
   border-bottom: 1px solid rgba(70, 45, 20, 0.08);
+}
+
+/* =========================
+   WITCHER TABS
+========================= */
+
+.witcher-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  width: 100%;
+
+  margin: 0.15rem 0 0.35rem;
+}
+
+.witcher-tab-btn {
+  min-width: 145px;
+
+  padding: 0.35rem 0.75rem;
+
+  border: 1px solid rgba(70, 45, 20, 0.45);
+  border-radius: 8px;
+
+  background: rgba(255, 248, 220, 0.75);
+
+  color: #2a1b10;
+
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease;
+}
+
+.witcher-tab-btn:hover {
+  background: rgba(90, 55, 25, 0.18);
+}
+
+.witcher-tab-btn.active {
+  background: rgba(90, 55, 25, 0.32);
+}
+
+.witcher-tab-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(70, 45, 20, 0.65);
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  line-height: 1;
 }

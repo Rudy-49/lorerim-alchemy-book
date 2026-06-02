@@ -1,6 +1,8 @@
 // =========================
 // WITCHER CONSUMABLES PAGE
 // =========================
+let currentWitcherTab = "search";
+
 function renderWitcherConsumablesPage() {
   const page = document.getElementById("witcherConsumablesPage");
   if (!page) return;
@@ -32,27 +34,60 @@ function renderWitcherConsumablesPage() {
         <p id="witcherMultiplierDisplay"></p>
       </div>
 
-      <div class="effect-search-row">
-        <div class="custom-dropdown">
-          <input
-            id="witcherEffectInput"
-            class="book-input"
-            type="text"
-            placeholder="Search primary effect..."
-            autocomplete="off"
-          />
+      <div class="witcher-tabs">
+        <button
+          type="button"
+          class="witcher-tab-btn ${currentWitcherTab === "search" ? "active" : ""}"
+          data-tab="search">
+          Search Effects
+        </button>
 
-          <div id="witcherDropdownMenu" class="dropdown-menu"></div>
+        <span class="witcher-tab-divider">|</span>
+
+        <button
+          type="button"
+          class="witcher-tab-btn ${currentWitcherTab === "tracked" ? "active" : ""}"
+          data-tab="tracked">
+          Tracked Ingredients
+        </button>
+      </div>
+
+      ${currentWitcherTab === "search" ? `
+        <div class="effect-search-row">
+          <div class="custom-dropdown">
+            <input
+              id="witcherEffectInput"
+              class="book-input"
+              type="text"
+              placeholder="Search primary effect..."
+              autocomplete="off"
+            />
+
+            <div id="witcherDropdownMenu" class="dropdown-menu"></div>
+          </div>
         </div>
-      </div>
 
-      <div id="witcherResults" class="effect-result empty">
-        ${getWitcherEmptyResultsHTML("Select a primary effect to see matching ingredients.")}
-      </div>
+        <div id="witcherResults" class="effect-result empty">
+          ${getWitcherEmptyResultsHTML("Select a primary effect to see matching ingredients.")}
+        </div>
+      ` : `
+        <div class="effect-search-row witcher-tracked-summary-row">
+          <span>Currently tracked Witcher ingredients</span>
+        </div>
+
+        <div id="witcherResults" class="effect-result">
+          ${getTrackedWitcherIngredientsHTML()}
+        </div>
+      `}
     </section>
   `;
 
-  initWitcherDropdown(primaryEffects);
+  document.querySelectorAll(".witcher-tab-btn").forEach(button => {
+    button.addEventListener("click", event => {
+      currentWitcherTab = event.currentTarget.dataset.tab;
+      renderWitcherConsumablesPage();
+    });
+  });
 
   document.getElementById("herbalistOneToggle")
     ?.addEventListener("change", handleHerbalistToggle);
@@ -63,7 +98,96 @@ function renderWitcherConsumablesPage() {
   document.getElementById("witcherTraitToggle")
     ?.addEventListener("change", updateWitcherConsumablesResults);
 
+  if (currentWitcherTab === "tracked") {
+    const multiplierDisplay = document.getElementById("witcherMultiplierDisplay");
+    if (multiplierDisplay) {
+      multiplierDisplay.textContent =
+        `Current magnitude multiplier: ×${getWitcherConsumableMultiplier()}`;
+    }
+
+    bindTrackedWitcherButtons();
+    return;
+  }
+
+  initWitcherDropdown(primaryEffects);
   updateWitcherConsumablesResults();
+}
+
+function getTrackedWitcherIngredientsHTML() {
+  const tracked = getTrackedWitcherIngredients();
+
+  if (!tracked.length) {
+    return `
+      <div class="witcher-table-row witcher-header-row witcher-tracked-header-row">
+        <span>Track</span>
+        <span>Ingredient</span>
+        <span>Primary Effect</span>
+      </div>
+
+      <div class="effect-result-list">
+        <p>No Witcher ingredients tracked.</p>
+      </div>
+    `;
+  }
+
+  const trackedIngredients = tracked
+    .map(name =>
+      ingredients.find(ingredient =>
+        ingredient.name.toLowerCase() === name.toLowerCase()
+      )
+    )
+    .filter(Boolean)
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  return `
+    <div class="witcher-table-row witcher-header-row witcher-tracked-header-row">
+      <span>Track</span>
+      <span>Ingredient</span>
+      <span>Primary Effect</span>
+    </div>
+
+    <div class="effect-result-list">
+      ${trackedIngredients.map(ingredient => `
+        <div class="witcher-table-row witcher-result-row witcher-tracked-row">
+          <span class="witcher-track-cell">
+            <button
+              type="button"
+              class="track-witcher-ingredient-btn tracked"
+              data-name="${escapeHTML(ingredient.name)}"
+              title="Remove from collection list">
+              ★
+            </button>
+          </span>
+
+          <span>${escapeHTML(ingredient.name)}</span>
+
+          <span>
+            ${escapeHTML(ingredient.effects?.[0]?.name || "-")}
+          </span>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function bindTrackedWitcherButtons() {
+  document
+    .querySelectorAll(".track-witcher-ingredient-btn")
+    .forEach(button => {
+      button.addEventListener("click", event => {
+        event.stopPropagation();
+
+        const ingredientName = event.currentTarget.dataset.name;
+
+        toggleTrackedWitcherIngredient(ingredientName);
+
+        renderWitcherConsumablesPage();
+
+        if (document.getElementById("ingredientCollectionPage")) {
+          renderIngredientCollectionPage();
+        }
+      });
+    });
 }
 
 
