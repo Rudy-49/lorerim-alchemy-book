@@ -9,8 +9,10 @@ const OUTPUT_DUPES = "data/processed/duplicateReview.csv";
 const raw = fs.readFileSync(INPUT, "utf-8");
 const lines = raw.split(/\r?\n/).filter(l => l.trim());
 
-// remove header
-const header = lines.shift();
+// remove header only if one exists
+if (lines[0].toLowerCase().includes("ingredient_name")) {
+  lines.shift();
+}
 
 // ====== PARSER ======
 function parse(line) {

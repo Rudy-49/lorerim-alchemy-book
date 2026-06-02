@@ -1,26 +1,28 @@
 IngredientName,Plugin,FormID,EffectSignature,ReviewAction
-"Minotaur Horn","1Minotaurs.esp","0500080A","Resist Poison | Damage Magicka Regeneration | Fortify Health Regeneration | Fortify Magicka Regeneration", KEEP_ONE
-"Minotaur Horn","ccBGSSSE037-Curios.esl","05000815","Resist Poison | Damage Magicka Regeneration | Fortify Health Regeneration | Fortify Magicka Regeneration", DELETE
-"Dwarven Oil","JS Dwarven Oil SE.esp","05000801","Weakness to Magic | Fortify Illusion | Fortify Magicka Regeneration | Restore Magicka", DELETE
-"Dwarven Oil","JS Dwarven Oil SE.esp","05000800","Weakness to Magic | Fortify Illusion | Fortify Magicka Regeneration | Restore Magicka", DELETE
-"Dwarven Oil","Skyrim.esm","000F11C0","Weakness to Magic | Fortify Illusion | Fortify Magicka Regeneration | Restore Magicka", KEEP_ONE
-"Large Antlers","Dynamic Things Alternative.esp","04000835","Fortify Unarmed | Fortify Stamina | Slow | Damage Strength", DELETE
-"Large Antlers","Dynamic Things Alternative.esp","04000834","Fortify Unarmed | Fortify Stamina | Slow | Damage Strength", DELETE
-"Large Antlers","Skyrim.esm","0006BC0A","Fortify Unarmed | Fortify Stamina | Slow | Damage Strength", KEEP_ONE
-"Fungus Stalk","ccBGSSSE037-Curios.esl","0500082B","Restore Stamina | Waterbreathing | Fortify Health | Restore Magicka", DELETE
-"Fungus Stalk","Wyrmstooth.esp","0241C922","Restore Stamina | Waterbreathing | Fortify Health | Restore Magicka",KEEP_ONE
-"Flame Stalk","ccBGSSSE037-Curios.esl","0500082A","Restore Health | Resist Frost | Weakness to Fire | Invisibility", DELETE
-"Flame Stalk","ccBGSSSE025-AdvDSGS.esm","05095E23","Restore Health | Resist Frost | Weakness to Fire | Invisibility", KEEP_ONE
-"Hunger Tongue","ccBGSSSE037-Curios.esl","0500080C","Weakness to Fire | Cure Disease | Cure Poison | Fortify Magicka", DELETE
-"Hunger Tongue","Journey to Baan Malur.esp","07000916","Weakness to Fire | Cure Disease | Cure Poison | Fortify Magicka", KEEP_ONE
-"Ash Salts","Trad_AE_CC_Collection_Requiem_Patch.esp","47173394","Slow | Resist Magic | Cure Disease | Spell Absorption", KEEP_ONE
-"Ash Salts","Journey to Baan Malur.esp","070A9185","Slow | Resist Magic | Cure Disease | Spell Absorption", DELETE
+"Minotaur Horn","1Minotaurs.esp","0500080A","Resist Poison | Damage Magicka Regeneration | Fortify Health Regeneration | Fortify Magicka Regeneration",DELETE
+"Minotaur Horn","ccBGSSSE037-Curios.esl","05000815","Resist Poison | Damage Magicka Regeneration | Fortify Health Regeneration | Fortify Magicka Regeneration",
+"Dwarven Oil","JS Dwarven Oil SE.esp","05000801","Weakness to Magic | Fortify Illusion | Fortify Magicka Regeneration | Restore Magicka",DELETE
+"Dwarven Oil","JS Dwarven Oil SE.esp","05000800","Weakness to Magic | Fortify Illusion | Fortify Magicka Regeneration | Restore Magicka",DELETE
+"Dwarven Oil","Skyrim.esm","000F11C0","Weakness to Magic | Fortify Illusion | Fortify Magicka Regeneration | Restore Magicka",
+"Large Antlers","Dynamic Things Alternative.esp","04000835","Fortify Unarmed | Fortify Stamina | Slow | Damage Strength",DELETE
+"Large Antlers","Dynamic Things Alternative.esp","04000834","Fortify Unarmed | Fortify Stamina | Slow | Damage Strength",DELETE
+"Large Antlers","Skyrim.esm","0006BC0A","Fortify Unarmed | Fortify Stamina | Slow | Damage Strength",
+"Fungus Stalk","ccBGSSSE037-Curios.esl","0500082B","Restore Stamina | Waterbreathing | Fortify Health | Restore Magicka",DELETE
+"Fungus Stalk","Wyrmstooth.esp","0241C922","Restore Stamina | Waterbreathing | Fortify Health | Restore Magicka",
+"Flame Stalk","ccBGSSSE037-Curios.esl","0500082A","Restore Health | Resist Frost | Weakness to Fire | Invisibility",
+"Flame Stalk","ccBGSSSE025-AdvDSGS.esm","05095E23","Restore Health | Resist Frost | Weakness to Fire | Invisibility",DELETE
+"Hunger Tongue","ccBGSSSE037-Curios.esl","0500080C","Weakness to Fire | Cure Disease | Cure Poison | Fortify Magicka",DELETE
+"Hunger Tongue","Journey to Baan Malur.esp","07000916","Weakness to Fire | Cure Disease | Cure Poison | Fortify Magicka",
+"Ash Salts","Trad_AE_CC_Collection_Requiem_Patch.esp","47173394","Slow | Resist Magic | Cure Disease | Spell Absorption",DELETE
+"Ash Salts","Journey to Baan Malur.esp","070A9185","Slow | Resist Magic | Cure Disease | Spell Absorption",
 "Sabre Cat Eye","Requiem.esp","0A065314","Restore Stamina | Damage Maximum Health | Damage Magicka | Restore Health",DELETE
-"Sabre Cat Eye","Skyrim.esm","0006BC07","Restore Stamina | Damage Maximum Health | Damage Magicka | Restore Health", KEEP_ONE
-"Jarrin Root","SurWR.esp","0504D68C","Damage Health | Damage Magicka | Damage Stamina | Damage Magicka Regeneration", DELETE
-"Jarrin Root","Skyrim.esm","0001BCBC","Damage Health | Damage Magicka | Damage Stamina | Damage Magicka Regeneration", KEEP_ONE
-"Spiddal Stick","Journey to Baan Malur.esp","070CC783","Damage Health | Damage Magicka | Weakness to Fire | Restore Stamina", DELETE 
-"Spiddal Stick","Wyrmstooth.esp","02753B78","Damage Health | Damage Magicka | Weakness to Fire | Restore Stamina", KEEP_ONE
-"Spiddal Stick","ccbgssse067-daedinv.esm","05024C15","Damage Health | Damage Magicka | Weakness to Fire | Restore Stamina", DELETE
-"Dash of Salt","Skyrim.esm","00074A19","Weakness to Magic | Fortify Restoration | Slow | Fortify Magicka Regeneration", KEEP_ONE
-"Dash of Salt","Skyrim.esm","00034CDF","Weakness to Magic | Fortify Restoration | Slow | Fortify Magicka Regeneration", DELETE
+"Sabre Cat Eye","Skyrim.esm","0006BC07","Restore Stamina | Damage Maximum Health | Damage Magicka | Restore Health",
+"Jarrin Root","SurWR.esp","0504D68C","Damage Health | Damage Magicka | Damage Stamina | Damage Magicka Regeneration",DELETE
+"Jarrin Root","Skyrim.esm","0001BCBC","Damage Health | Damage Magicka | Damage Stamina | Damage Magicka Regeneration",
+"Spiddal Stick","Journey to Baan Malur.esp","070CC783","Damage Health | Damage Magicka | Weakness to Fire | Restore Stamina",
+"Spiddal Stick","Wyrmstooth.esp","02753B78","Damage Health | Damage Magicka | Weakness to Fire | Restore Stamina",DELETE
+"Spiddal Stick","ccbgssse067-daedinv.esm","05024C15","Damage Health | Damage Magicka | Weakness to Fire | Restore Stamina",DELETE
+"Nightshade","cceejsse005-cave.esm","05042A61","Damage Health | Damage Magicka Regeneration | Lingering Damage Stamina | Fortify Destruction",DELETE
+"Nightshade","Skyrim.esm","0002F44C","Damage Health | Damage Magicka Regeneration | Lingering Damage Stamina | Fortify Destruction",
+"Dash of Salt","Skyrim.esm","00074A19","Weakness to Magic | Fortify Restoration | Slow | Fortify Magicka Regeneration",DELETE
+"Dash of Salt","Skyrim.esm","00034CDF","Weakness to Magic | Fortify Restoration | Slow | Fortify Magicka Regeneration",

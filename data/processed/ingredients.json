@@ -1,120 +1,40 @@
 [
   {
-    "identityKey": "Dwarfsphere.esp|059E9490",
-    "name": "Pounded Sabre Cat Tooth",
-    "editorId": "DwaSpSabrecatTooth",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E9490",
-    "imageKey": "pounded_sabre_cat_tooth",
-    "weight": "0.100000",
-    "value": "2",
+    "identityKey": "LoreRim - Alchemy Tweaks.esp|6E000803",
+    "name": "Cursed Daedra Heart",
+    "editorId": "CursedDaedraHeart",
+    "plugin": "LoreRim - Alchemy Tweaks.esp",
+    "fixedFormId": "6E000803",
+    "imageKey": "cursed_daedra_heart",
+    "weight": "0.500000",
+    "value": "500",
     "effects": [
       {
-        "name": "Fortify Unarmed",
+        "name": "Dispel",
         "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Fortify Armor Rating",
-        "type": "positive",
-        "magnitude": "12.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Fortify Smithing",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Weakness to Poison",
-        "type": "negative",
-        "magnitude": "6.000000",
-        "duration": "30",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Skyrim.esm|000516C8",
-    "name": "Deathbell",
-    "editorId": "deathBell",
-    "plugin": "Skyrim.esm",
-    "fixedFormId": "000516C8",
-    "imageKey": "deathbell",
-    "weight": "0.100000",
-    "value": "4",
-    "effects": [
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "12.000000",
+        "magnitude": "10.000000",
         "duration": "0",
         "order": 1
       },
       {
-        "name": "Damage Maximum Stamina",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
+        "name": "Fortify Health",
+        "type": "positive",
+        "magnitude": "20.000000",
+        "duration": "300",
         "order": 2
       },
       {
-        "name": "Tardiness",
-        "type": "negative",
-        "magnitude": "50.000000",
-        "duration": "4",
+        "name": "Fortify Stamina",
+        "type": "positive",
+        "magnitude": "20.000000",
+        "duration": "300",
         "order": 3
       },
       {
-        "name": "Weakness to Poison",
-        "type": "negative",
-        "magnitude": "6.000000",
-        "duration": "30",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Ordinator - Perks of Skyrim.esp|12005F43",
-    "name": "Dwemer Egg",
-    "editorId": "ORD_DwemerEgg",
-    "plugin": "Ordinator - Perks of Skyrim.esp",
-    "fixedFormId": "12005F43",
-    "imageKey": "dwemer_egg",
-    "weight": "0.500000",
-    "value": "25",
-    "effects": [
-      {
-        "name": "Resist Shock",
+        "name": "Fortify Magicka",
         "type": "positive",
-        "magnitude": "3.000000",
-        "duration": "60",
-        "order": 1
-      },
-      {
-        "name": "Fortify Lockpicking",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "30",
-        "order": 2
-      },
-      {
-        "name": "Weakness to Shock",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "30",
-        "order": 3
-      },
-      {
-        "name": "Paralysis",
-        "type": "negative",
-        "magnitude": "0.000000",
-        "duration": "2",
+        "magnitude": "20.000000",
+        "duration": "300",
         "order": 4
       }
     ]
@@ -246,7 +166,7 @@
     "plugin": "DragonHunting.esp",
     "fixedFormId": "05000801",
     "imageKey": "dragon_heartscales",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "100",
     "effects": [
       {
@@ -526,7 +446,7 @@
     "plugin": "1Minotaurs.esp",
     "fixedFormId": "0500080A",
     "imageKey": "minotaur_horn",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "110",
     "effects": [
       {
@@ -966,7 +886,7 @@
     "plugin": "Alit.esp",
     "fixedFormId": "0500081E",
     "imageKey": "alit_hide",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "5",
     "effects": [
       {
@@ -1006,7 +926,7 @@
     "plugin": "Alit.esp",
     "fixedFormId": "0500081D",
     "imageKey": "alit_hide",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "5",
     "effects": [
       {
@@ -1046,7 +966,7 @@
     "plugin": "Alit.esp",
     "fixedFormId": "0500081C",
     "imageKey": "alit_hide",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "5",
     "effects": [
       {
@@ -1125,7 +1045,7 @@
     "editorId": "ElderMushroom05",
     "plugin": "Elder Mushrooms-Requiem.esp",
     "fixedFormId": "02000006",
-    "imageKey": "elder_namira's_rot",
+    "imageKey": "elder_namiras_rot",
     "weight": "0.250000",
     "value": "12",
     "effects": [
@@ -1405,8 +1325,8 @@
     "editorId": "FVS_VelehkHeart",
     "plugin": "Finding_VelehkSain.esp",
     "fixedFormId": "02000809",
-    "imageKey": "velehk_sain's_heart",
-    "weight": "0.500000",
+    "imageKey": "velehk_sains_heart",
+    "weight": "0.400000",
     "value": "250",
     "effects": [
       {
@@ -1435,6 +1355,86 @@
         "type": "negative",
         "magnitude": "4.000000",
         "duration": "15",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Morrowind Creatures Merge.esp|04000A18",
+    "name": "Grahl Tusk",
+    "editorId": "og_GrahlTusk",
+    "plugin": "Morrowind Creatures Merge.esp",
+    "fixedFormId": "04000A18",
+    "imageKey": "grahl_tusk",
+    "weight": "0.400000",
+    "value": "20",
+    "effects": [
+      {
+        "name": "Fortify One-Handed",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 1
+      },
+      {
+        "name": "Fortify Health",
+        "type": "positive",
+        "magnitude": "8.000000",
+        "duration": "300",
+        "order": 2
+      },
+      {
+        "name": "Slow",
+        "type": "negative",
+        "magnitude": "50.000000",
+        "duration": "4",
+        "order": 3
+      },
+      {
+        "name": "Frenzy",
+        "type": "negative",
+        "magnitude": "2.000000",
+        "duration": "15",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Morrowind Creatures Merge.esp|040009F2",
+    "name": "Grave Tar",
+    "editorId": "ogcd_GraveTar",
+    "plugin": "Morrowind Creatures Merge.esp",
+    "fixedFormId": "040009F2",
+    "imageKey": "grave_tar",
+    "weight": "0.400000",
+    "value": "15",
+    "effects": [
+      {
+        "name": "Resist Frost",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 1
+      },
+      {
+        "name": "Damage Health",
+        "type": "negative",
+        "magnitude": "8.000000",
+        "duration": "0",
+        "order": 2
+      },
+      {
+        "name": "Fortify Stamina",
+        "type": "positive",
+        "magnitude": "8.000000",
+        "duration": "300",
+        "order": 3
+      },
+      {
+        "name": "Slow",
+        "type": "negative",
+        "magnitude": "50.000000",
+        "duration": "4",
         "order": 4
       }
     ]
@@ -1486,7 +1486,7 @@
     "plugin": "Dynamic Things Alternative.esp",
     "fixedFormId": "04000835",
     "imageKey": "large_antlers",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -1526,7 +1526,7 @@
     "plugin": "Dynamic Things Alternative.esp",
     "fixedFormId": "04000834",
     "imageKey": "large_antlers",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -1566,7 +1566,7 @@
     "plugin": "ShoresofSkyrim.esp",
     "fixedFormId": "05000A5D",
     "imageKey": "mussels",
-    "weight": "0.500000",
+    "weight": "0.200000",
     "value": "2",
     "effects": [
       {
@@ -1606,7 +1606,7 @@
     "plugin": "melyfairy.esl",
     "fixedFormId": "0500080E",
     "imageKey": "sprite_dust",
-    "weight": "0.500000",
+    "weight": "0.200000",
     "value": "20",
     "effects": [
       {
@@ -1646,7 +1646,7 @@
     "plugin": "melyfairy.esl",
     "fixedFormId": "0500080D",
     "imageKey": "sprite_dust",
-    "weight": "0.500000",
+    "weight": "0.200000",
     "value": "20",
     "effects": [
       {
@@ -1686,7 +1686,7 @@
     "plugin": "melyfairy.esl",
     "fixedFormId": "0500080C",
     "imageKey": "sprite_dust",
-    "weight": "0.500000",
+    "weight": "0.200000",
     "value": "20",
     "effects": [
       {
@@ -1800,6 +1800,86 @@
     ]
   },
   {
+    "identityKey": "_ResourcePack.esl|030000D0",
+    "name": "Aloe Vera Leaves",
+    "editorId": "RP_AloeVeraLeaves01",
+    "plugin": "_ResourcePack.esl",
+    "fixedFormId": "030000D0",
+    "imageKey": "aloe_vera_leaves",
+    "weight": "0.100000",
+    "value": "1",
+    "effects": [
+      {
+        "name": "Restore Health",
+        "type": "positive",
+        "magnitude": "5.000000",
+        "duration": "0",
+        "order": 1
+      },
+      {
+        "name": "Restore Stamina",
+        "type": "positive",
+        "magnitude": "5.000000",
+        "duration": "0",
+        "order": 2
+      },
+      {
+        "name": "Damage Magicka",
+        "type": "negative",
+        "magnitude": "5.000000",
+        "duration": "0",
+        "order": 3
+      },
+      {
+        "name": "Invisibility",
+        "type": "positive",
+        "magnitude": "0.000000",
+        "duration": "2",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "cckrtsse001_altar.esl|05000F86",
+    "name": "Healing Salts",
+    "editorId": "ccKRTSSE001_SaltPile",
+    "plugin": "cckrtsse001_altar.esl",
+    "fixedFormId": "05000F86",
+    "imageKey": "healing_salts",
+    "weight": "0.200000",
+    "value": "4",
+    "effects": [
+      {
+        "name": "Weakness to Magic",
+        "type": "negative",
+        "magnitude": "3.000000",
+        "duration": "30",
+        "order": 1
+      },
+      {
+        "name": "Fortify Restoration",
+        "type": "positive",
+        "magnitude": "2.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Slow",
+        "type": "negative",
+        "magnitude": "50.000000",
+        "duration": "6",
+        "order": 3
+      },
+      {
+        "name": "Fortify Magicka Regeneration",
+        "type": "positive",
+        "magnitude": "16.000000",
+        "duration": "300",
+        "order": 4
+      }
+    ]
+  },
+  {
     "identityKey": "cckrtsse001_altar.esl|05000F0F",
     "name": "Ironwood Fruit",
     "editorId": "ccKRTSSE001_IronwoodNut",
@@ -1845,8 +1925,8 @@
     "editorId": "ccEDHSSE002_HumanHeart",
     "plugin": "ccedhsse002-splkntset.esl",
     "fixedFormId": "0500085D",
-    "imageKey": "simon_rodayne's_heart",
-    "weight": "1.000000",
+    "imageKey": "simon_rodaynes_heart",
+    "weight": "0.400000",
     "value": "0",
     "effects": [
       {
@@ -1886,7 +1966,7 @@
     "plugin": "ccedhsse002-splkntset.esl",
     "fixedFormId": "0500085B",
     "imageKey": "corrupted_human_heart",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "10",
     "effects": [
       {
@@ -1925,7 +2005,7 @@
     "editorId": "ccBGSSSE040_Mushroom01",
     "plugin": "ccbgssse040-advobgobs.esl",
     "fixedFormId": "05000832",
-    "imageKey": "steel-blue_entoloma",
+    "imageKey": "steel_blue_entoloma",
     "weight": "0.100000",
     "value": "2",
     "effects": [
@@ -2166,8 +2246,8 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000851",
     "imageKey": "heart_of_order",
-    "weight": "0.500000",
-    "value": "3000",
+    "weight": "0.400000",
+    "value": "4000",
     "effects": [
       {
         "name": "Restore Health",
@@ -2325,7 +2405,7 @@
     "editorId": "ccBGSSSE037_HackleLoLeaf",
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "0500082E",
-    "imageKey": "hackle-lo_leaf",
+    "imageKey": "hackle_lo_leaf",
     "weight": "0.100000",
     "value": "50",
     "effects": [
@@ -2606,7 +2686,7 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000827",
     "imageKey": "dreugh_wax",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -2646,7 +2726,7 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000826",
     "imageKey": "daedroth_teeth",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "2000",
     "effects": [
       {
@@ -2685,7 +2765,7 @@
     "editorId": "ccBGSSSE037_WormsHeadCap",
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000825",
-    "imageKey": "worm's_head_cap",
+    "imageKey": "worms_head_cap",
     "weight": "0.200000",
     "value": "40",
     "effects": [
@@ -2805,7 +2885,7 @@
     "editorId": "ccBGSSSE037_WatchersEyeBlind",
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000822",
-    "imageKey": "blind_watcher's_eye",
+    "imageKey": "blind_watchers_eye",
     "weight": "0.200000",
     "value": "10",
     "effects": [
@@ -2845,7 +2925,7 @@
     "editorId": "ccBGSSSE037_WatchersEye",
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000821",
-    "imageKey": "watcher's_eye",
+    "imageKey": "watchers_eye",
     "weight": "0.200000",
     "value": "10",
     "effects": [
@@ -3086,7 +3166,7 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "0500081B",
     "imageKey": "scalon_fin",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "150",
     "effects": [
       {
@@ -3285,8 +3365,8 @@
     "editorId": "ccBGSSSE037_OgresTeeth",
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000816",
-    "imageKey": "ogre's_teeth",
-    "weight": "1.000000",
+    "imageKey": "ogres_teeth",
+    "weight": "0.400000",
     "value": "100",
     "effects": [
       {
@@ -3326,7 +3406,7 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000815",
     "imageKey": "minotaur_horn",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "110",
     "effects": [
       {
@@ -3486,7 +3566,7 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000810",
     "imageKey": "kagouti_hide",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "20",
     "effects": [
       {
@@ -3515,6 +3595,46 @@
         "type": "positive",
         "magnitude": "4.000000",
         "duration": "120",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "ccBGSSSE037-Curios.esl|0500080F",
+    "name": "Imp Gall",
+    "editorId": "ccBGSSSE037_ImpGall",
+    "plugin": "ccBGSSSE037-Curios.esl",
+    "fixedFormId": "0500080F",
+    "imageKey": "imp_gall",
+    "weight": "0.200000",
+    "value": "15",
+    "effects": [
+      {
+        "name": "Damage Health",
+        "type": "negative",
+        "magnitude": "12.000000",
+        "duration": "0",
+        "order": 1
+      },
+      {
+        "name": "Weakness to Fire",
+        "type": "negative",
+        "magnitude": "6.000000",
+        "duration": "30",
+        "order": 2
+      },
+      {
+        "name": "Fortify Barter",
+        "type": "positive",
+        "magnitude": "3.000000",
+        "duration": "120",
+        "order": 3
+      },
+      {
+        "name": "Cure Poison",
+        "type": "positive",
+        "magnitude": "3.000000",
+        "duration": "0",
         "order": 4
       }
     ]
@@ -3566,7 +3686,7 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "0500080D",
     "imageKey": "hydnum_azure_giant_spore",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "40",
     "effects": [
       {
@@ -3686,7 +3806,7 @@
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "0500080A",
     "imageKey": "daedra_silk",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "2000",
     "effects": [
       {
@@ -3925,8 +4045,8 @@
     "editorId": "ccBGSSSE037_BunglersBane",
     "plugin": "ccBGSSSE037-Curios.esl",
     "fixedFormId": "05000802",
-    "imageKey": "bungler's_bane",
-    "weight": "0.500000",
+    "imageKey": "bunglers_bane",
+    "weight": "0.400000",
     "value": "50",
     "effects": [
       {
@@ -3966,7 +4086,7 @@
     "plugin": "ccbgssse003-zombies.esl",
     "fixedFormId": "0500080C",
     "imageKey": "mort_flesh",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "2",
     "effects": [
       {
@@ -4000,13 +4120,53 @@
     ]
   },
   {
+    "identityKey": "Ordinator - Perks of Skyrim.esp|13005F43",
+    "name": "Dwemer Egg",
+    "editorId": "ORD_DwemerEgg",
+    "plugin": "Ordinator - Perks of Skyrim.esp",
+    "fixedFormId": "13005F43",
+    "imageKey": "dwemer_egg",
+    "weight": "0.400000",
+    "value": "25",
+    "effects": [
+      {
+        "name": "Resist Shock",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 1
+      },
+      {
+        "name": "Fortify Alteration",
+        "type": "positive",
+        "magnitude": "2.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Weakness to Shock",
+        "type": "negative",
+        "magnitude": "6.000000",
+        "duration": "30",
+        "order": 3
+      },
+      {
+        "name": "Paralysis",
+        "type": "negative",
+        "magnitude": "0.000000",
+        "duration": "2",
+        "order": 4
+      }
+    ]
+  },
+  {
     "identityKey": "RuneDreamstrides.esp|05103FF2",
     "name": "Omen Horn",
     "editorId": "NTMROmenHorn",
     "plugin": "RuneDreamstrides.esp",
     "fixedFormId": "05103FF2",
     "imageKey": "omen_horn",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "80",
     "effects": [
       {
@@ -4035,6 +4195,46 @@
         "type": "negative",
         "magnitude": "32.000000",
         "duration": "60",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Growl - Werebeasts of Skyrim.esp|04029051",
+    "name": "Werebeast Blood",
+    "editorId": "HRI_Lycan_Ingredient_WerewolfBlood",
+    "plugin": "Growl - Werebeasts of Skyrim.esp",
+    "fixedFormId": "04029051",
+    "imageKey": "werebeast_blood",
+    "weight": "0.400000",
+    "value": "150",
+    "effects": [
+      {
+        "name": "Beast Form",
+        "type": "positive",
+        "magnitude": "0.000000",
+        "duration": "10",
+        "order": 1
+      },
+      {
+        "name": "Fortify Health",
+        "type": "positive",
+        "magnitude": "12.000000",
+        "duration": "300",
+        "order": 2
+      },
+      {
+        "name": "Frenzy",
+        "type": "negative",
+        "magnitude": "3.000000",
+        "duration": "15",
+        "order": 3
+      },
+      {
+        "name": "Fortify Health Regeneration",
+        "type": "positive",
+        "magnitude": "24.000000",
+        "duration": "300",
         "order": 4
       }
     ]
@@ -4085,8 +4285,8 @@
     "editorId": "mihail_seagiant_loot",
     "plugin": "mihailseagiants.esp",
     "fixedFormId": "0500591D",
-    "imageKey": "sea_giant's_toe",
-    "weight": "1.000000",
+    "imageKey": "sea_giants_toe",
+    "weight": "0.400000",
     "value": "80",
     "effects": [
       {
@@ -4125,7 +4325,7 @@
     "editorId": "AK69RiverFlower",
     "plugin": "Katana.esp",
     "fixedFormId": "05939DBD",
-    "imageKey": "jasmine-scented_flower",
+    "imageKey": "jasmine_scented_flower",
     "weight": "0.100000",
     "value": "5",
     "effects": [
@@ -4166,7 +4366,7 @@
     "plugin": "HLIORemi.esp",
     "fixedFormId": "056A3052",
     "imageKey": "metal_lubricant",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "1",
     "effects": [
       {
@@ -4206,7 +4406,7 @@
     "plugin": "Trad_AE_CC_Collection_Requiem_Patch.esp",
     "fixedFormId": "4764E167",
     "imageKey": "profane_heart",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "3000",
     "effects": [
       {
@@ -4246,7 +4446,7 @@
     "plugin": "Trad_AE_CC_Collection_Requiem_Patch.esp",
     "fixedFormId": "4733888C",
     "imageKey": "lich_heart",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "1000",
     "effects": [
       {
@@ -4286,7 +4486,7 @@
     "plugin": "Trad_AE_CC_Collection_Requiem_Patch.esp",
     "fixedFormId": "4733370E",
     "imageKey": "lurker_fin",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "2000",
     "effects": [
       {
@@ -4486,7 +4686,7 @@
     "plugin": "Trad_AE_CC_Collection_Requiem_Patch.esp",
     "fixedFormId": "47173395",
     "imageKey": "ash_heart",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "15",
     "effects": [
       {
@@ -4685,8 +4885,8 @@
     "editorId": "REQ_Ingredient_Cleese_CritterPondFish",
     "plugin": "Requiem.esp",
     "fixedFormId": "0A0972E6",
-    "imageKey": "jon's_giant_abecean_longfin",
-    "weight": "1.000000",
+    "imageKey": "jons_giant_abecean_longfin",
+    "weight": "0.400000",
     "value": "500",
     "effects": [
       {
@@ -4726,7 +4926,7 @@
     "plugin": "Requiem.esp",
     "fixedFormId": "0A07524B",
     "imageKey": "strange_remains",
-    "weight": "0.750000",
+    "weight": "0.400000",
     "value": "850",
     "effects": [
       {
@@ -4806,7 +5006,7 @@
     "plugin": "Requiem.esp",
     "fixedFormId": "0A043665",
     "imageKey": "sabre_cat_heart",
-    "weight": "0.750000",
+    "weight": "0.400000",
     "value": "35",
     "effects": [
       {
@@ -4926,7 +5126,7 @@
     "plugin": "Requiem.esp",
     "fixedFormId": "0A04365F",
     "imageKey": "bear_heart",
-    "weight": "0.750000",
+    "weight": "0.400000",
     "value": "40",
     "effects": [
       {
@@ -5006,7 +5206,7 @@
     "plugin": "Requiem.esp",
     "fixedFormId": "0A034E09",
     "imageKey": "horker_fat",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -5046,14 +5246,14 @@
     "plugin": "SurWR.esp",
     "fixedFormId": "0504D68C",
     "imageKey": "jarrin_root",
-    "weight": "0.500000",
+    "weight": "0.250000",
     "value": "100",
     "effects": [
       {
         "name": "Damage Health",
         "type": "negative",
-        "magnitude": "200.000000",
-        "duration": "1",
+        "magnitude": "16.000000",
+        "duration": "0",
         "order": 1
       },
       {
@@ -5160,93 +5360,13 @@
     ]
   },
   {
-    "identityKey": "Morrowind Creatures Merge.esp|04025844",
-    "name": "Grahl Tusk",
-    "editorId": "og_GrahlTusk",
-    "plugin": "Morrowind Creatures Merge.esp",
-    "fixedFormId": "04025844",
-    "imageKey": "grahl_tusk",
-    "weight": "0.500000",
-    "value": "20",
-    "effects": [
-      {
-        "name": "Fortify One-Handed",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Fortify Health",
-        "type": "positive",
-        "magnitude": "8.000000",
-        "duration": "300",
-        "order": 2
-      },
-      {
-        "name": "Slow",
-        "type": "negative",
-        "magnitude": "50.000000",
-        "duration": "4",
-        "order": 3
-      },
-      {
-        "name": "Frenzy",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Morrowind Creatures Merge.esp|040009F2",
-    "name": "Grave Tar",
-    "editorId": "ogcd_GraveTar",
-    "plugin": "Morrowind Creatures Merge.esp",
-    "fixedFormId": "040009F2",
-    "imageKey": "grave_tar",
-    "weight": "0.500000",
-    "value": "15",
-    "effects": [
-      {
-        "name": "Resist Frost",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 2
-      },
-      {
-        "name": "Fortify Stamina",
-        "type": "positive",
-        "magnitude": "8.000000",
-        "duration": "300",
-        "order": 3
-      },
-      {
-        "name": "Slow",
-        "type": "negative",
-        "magnitude": "50.000000",
-        "duration": "4",
-        "order": 4
-      }
-    ]
-  },
-  {
     "identityKey": "Inigo.esp|0206341B",
     "name": "Snow Thrush Egg",
     "editorId": "LangleyBirdEgg1",
     "plugin": "Inigo.esp",
     "fixedFormId": "0206341B",
     "imageKey": "snow_thrush_egg",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "5",
     "effects": [
       {
@@ -5275,6 +5395,406 @@
         "type": "positive",
         "magnitude": "5.000000",
         "duration": "0",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|02504494",
+    "name": "Scamp Ear (Dark)",
+    "editorId": "zzzCHScampEarDark",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "02504494",
+    "imageKey": "scamp_ear_dark",
+    "weight": "0.200000",
+    "value": "3",
+    "effects": [
+      {
+        "name": "Damage Magicka Regeneration",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 1
+      },
+      {
+        "name": "Damage Maximum Magicka",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 2
+      },
+      {
+        "name": "Damage Magicka",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "0",
+        "order": 3
+      },
+      {
+        "name": "Fortify Armor Rating",
+        "type": "positive",
+        "magnitude": "12.000000",
+        "duration": "120",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|02500DEA",
+    "name": "Ogrim Fat",
+    "editorId": "zzzCHOgrimFat",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "02500DEA",
+    "imageKey": "ogrim_fat",
+    "weight": "0.100000",
+    "value": "18",
+    "effects": [
+      {
+        "name": "Restore Health",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "20",
+        "order": 1
+      },
+      {
+        "name": "Fortify Restoration",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Resist Poison",
+        "type": "positive",
+        "magnitude": "6.000000",
+        "duration": "120",
+        "order": 3
+      },
+      {
+        "name": "Damage Magicka",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "0",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|02220038",
+    "name": "White Flower",
+    "editorId": "zzzCHMountainFlower01White",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "02220038",
+    "imageKey": "white_flower",
+    "weight": "0.100000",
+    "value": "2",
+    "effects": [
+      {
+        "name": "Restore Health",
+        "type": "positive",
+        "magnitude": "1.000000",
+        "duration": "20",
+        "order": 1
+      },
+      {
+        "name": "Fortify Conjuration",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Fortify Health",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "300",
+        "order": 3
+      },
+      {
+        "name": "Damage Magicka Regeneration",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|0212B2FB",
+    "name": "Heart of Order",
+    "editorId": "zzzCHOrderHeart",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "0212B2FB",
+    "imageKey": "heart_of_order",
+    "weight": "0.400000",
+    "value": "250",
+    "effects": [
+      {
+        "name": "Restore Health",
+        "type": "positive",
+        "magnitude": "1.000000",
+        "duration": "20",
+        "order": 1
+      },
+      {
+        "name": "Damage Stamina Regeneration",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 2
+      },
+      {
+        "name": "Damage Magicka",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "0",
+        "order": 3
+      },
+      {
+        "name": "Fear",
+        "type": "negative",
+        "magnitude": "2.000000",
+        "duration": "15",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|021001A2",
+    "name": "Iron Spider Egg",
+    "editorId": "zzzCHIronSpiderEgg",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "021001A2",
+    "imageKey": "iron_spider_egg",
+    "weight": "0.200000",
+    "value": "5",
+    "effects": [
+      {
+        "name": "Damage Stamina",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "0",
+        "order": 1
+      },
+      {
+        "name": "Damage Magicka Regeneration",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 2
+      },
+      {
+        "name": "Fortify Lockpicking",
+        "type": "positive",
+        "magnitude": "0.400000",
+        "duration": "120",
+        "order": 3
+      },
+      {
+        "name": "Fortify Marksman",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|020BF81C",
+    "name": "Cave Worm Egg",
+    "editorId": "zzzCHCaveWormEgg01",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "020BF81C",
+    "imageKey": "cave_worm_egg",
+    "weight": "0.200000",
+    "value": "3",
+    "effects": [
+      {
+        "name": "Resist Poison",
+        "type": "positive",
+        "magnitude": "6.000000",
+        "duration": "120",
+        "order": 1
+      },
+      {
+        "name": "Fortify Pickpocket",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Lingering Damage Health",
+        "type": "negative",
+        "magnitude": "1.000000",
+        "duration": "15",
+        "order": 3
+      },
+      {
+        "name": "Fortify Stamina",
+        "type": "positive",
+        "magnitude": "8.000000",
+        "duration": "300",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|020B71E3",
+    "name": "Scamp Ear",
+    "editorId": "zzzCHScampEar",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "020B71E3",
+    "imageKey": "scamp_ear",
+    "weight": "0.200000",
+    "value": "3",
+    "effects": [
+      {
+        "name": "Damage Stamina Regeneration",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 1
+      },
+      {
+        "name": "Damage Maximum Health",
+        "type": "negative",
+        "magnitude": "8.000000",
+        "duration": "60",
+        "order": 2
+      },
+      {
+        "name": "Damage Health",
+        "type": "negative",
+        "magnitude": "8.000000",
+        "duration": "0",
+        "order": 3
+      },
+      {
+        "name": "Fortify Speed",
+        "type": "positive",
+        "magnitude": "12.000000",
+        "duration": "120",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|020B4E96",
+    "name": "Sand Runner Egg",
+    "editorId": "zzzCHSandRunnerEggs",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "020B4E96",
+    "imageKey": "sand_runner_egg",
+    "weight": "0.200000",
+    "value": "10",
+    "effects": [
+      {
+        "name": "Invisibility",
+        "type": "positive",
+        "magnitude": "0.000000",
+        "duration": "4",
+        "order": 1
+      },
+      {
+        "name": "Fortify Stamina",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Damage Magicka",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "0",
+        "order": 3
+      },
+      {
+        "name": "Cure Poison",
+        "type": "positive",
+        "magnitude": "1.000000",
+        "duration": "0",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|0203B0F7",
+    "name": "Plague Raven Claw",
+    "editorId": "zzzCHPlagueRavenClaw",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "0203B0F7",
+    "imageKey": "plague_raven_claw",
+    "weight": "0.250000",
+    "value": "20",
+    "effects": [
+      {
+        "name": "Resist Magic",
+        "type": "positive",
+        "magnitude": "2.000000",
+        "duration": "120",
+        "order": 1
+      },
+      {
+        "name": "Lingering Damage Magicka",
+        "type": "negative",
+        "magnitude": "1.000000",
+        "duration": "30",
+        "order": 2
+      },
+      {
+        "name": "Fortify Jump",
+        "type": "positive",
+        "magnitude": "20.000000",
+        "duration": "120",
+        "order": 3
+      },
+      {
+        "name": "Fortify Barter",
+        "type": "positive",
+        "magnitude": "2.000000",
+        "duration": "120",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Vigilant.esm|0203B0F6",
+    "name": "Plague Raven Feathers",
+    "editorId": "zzzCHPlagueRavenFeathers",
+    "plugin": "Vigilant.esm",
+    "fixedFormId": "0203B0F6",
+    "imageKey": "plague_raven_feathers",
+    "weight": "0.100000",
+    "value": "20",
+    "effects": [
+      {
+        "name": "Damage Magicka",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "0",
+        "order": 1
+      },
+      {
+        "name": "Fortify Conjuration",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Frenzy",
+        "type": "negative",
+        "magnitude": "2.000000",
+        "duration": "15",
+        "order": 3
+      },
+      {
+        "name": "Weakness to Shock",
+        "type": "negative",
+        "magnitude": "4.000000",
+        "duration": "30",
         "order": 4
       }
     ]
@@ -5406,7 +5926,7 @@
     "plugin": "Gray Fox Cowl.esm",
     "fixedFormId": "0400081C",
     "imageKey": "goron_piece",
-    "weight": "25.000000",
+    "weight": "0.400000",
     "value": "106",
     "effects": [
       {
@@ -5432,126 +5952,6 @@
       },
       {
         "name": "Fortify Block",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Haem Projects Goblands.esp|05014DC3",
-    "name": "Bloatspore",
-    "editorId": "HPGBloat",
-    "plugin": "Haem Projects Goblands.esp",
-    "fixedFormId": "05014DC3",
-    "imageKey": "bloatspore",
-    "weight": "0.100000",
-    "value": "8",
-    "effects": [
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Damage Maximum Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Fortify Destruction",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Invisibility",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "4",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Haem Projects Goblands.esp|05014DBF",
-    "name": "Muck",
-    "editorId": "HPGMusk",
-    "plugin": "Haem Projects Goblands.esp",
-    "fixedFormId": "05014DBF",
-    "imageKey": "muck",
-    "weight": "0.100000",
-    "value": "6",
-    "effects": [
-      {
-        "name": "Slow",
-        "type": "negative",
-        "magnitude": "50.000000",
-        "duration": "4",
-        "order": 1
-      },
-      {
-        "name": "Fortify Speed",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Fortify Alteration",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Fortify Two-Handed",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Haem Projects Goblands.esp|05014DBB",
-    "name": "Elf Cup",
-    "editorId": "HPGElfCupCap",
-    "plugin": "Haem Projects Goblands.esp",
-    "fixedFormId": "05014DBB",
-    "imageKey": "elf_cup",
-    "weight": "0.100000",
-    "value": "5",
-    "effects": [
-      {
-        "name": "Cure Disease",
-        "type": "positive",
-        "magnitude": "5.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Lingering Damage Magicka",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
-        "order": 2
-      },
-      {
-        "name": "Damage Stamina",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Fortify Illusion",
         "type": "positive",
         "magnitude": "4.000000",
         "duration": "120",
@@ -5606,7 +6006,7 @@
     "plugin": "HeartOfTheReach.esp",
     "fixedFormId": "0401A25E",
     "imageKey": "poison_swamp_root",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "100",
     "effects": [
       {
@@ -5726,7 +6126,7 @@
     "plugin": "HeartOfTheReach.esp",
     "fixedFormId": "0401A255",
     "imageKey": "swamp_taproot",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "40",
     "effects": [
       {
@@ -5755,686 +6155,6 @@
         "type": "positive",
         "magnitude": "1.500000",
         "duration": "20",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059EE5A9",
-    "name": "Dim Glow Dust",
-    "editorId": "DwaSpGlowDust",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059EE5A9",
-    "imageKey": "dim_glow_dust",
-    "weight": "0.500000",
-    "value": "18",
-    "effects": [
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Damage Magicka Regeneration",
-        "type": "negative",
-        "magnitude": "32.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Fortify Destruction",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "60",
-        "order": 3
-      },
-      {
-        "name": "Resist Shock",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E94A6",
-    "name": "Petrous Chaurus Eggs",
-    "editorId": "DwaSpChaurusEggs",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E94A6",
-    "imageKey": "petrous_chaurus_eggs",
-    "weight": "0.200000",
-    "value": "10",
-    "effects": [
-      {
-        "name": "Weakness to Poison",
-        "type": "negative",
-        "magnitude": "6.000000",
-        "duration": "30",
-        "order": 1
-      },
-      {
-        "name": "Fortify Stamina",
-        "type": "positive",
-        "magnitude": "8.000000",
-        "duration": "300",
-        "order": 2
-      },
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Invisibility",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "4",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E94A4",
-    "name": "Stale Ectoplasm",
-    "editorId": "DwaSpEctoplasm",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E94A4",
-    "imageKey": "stale_ectoplasm",
-    "weight": "0.100000",
-    "value": "25",
-    "effects": [
-      {
-        "name": "Restore Magicka",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "20",
-        "order": 1
-      },
-      {
-        "name": "Fortify Destruction",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Fortify Magicka",
-        "type": "positive",
-        "magnitude": "8.000000",
-        "duration": "300",
-        "order": 3
-      },
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E94A2",
-    "name": "Stale Falmer Ear",
-    "editorId": "DwaSpFalmerEar",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E94A2",
-    "imageKey": "stale_falmer_ear",
-    "weight": "0.200000",
-    "value": "10",
-    "effects": [
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Frenzy",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
-        "order": 2
-      },
-      {
-        "name": "Resist Poison",
-        "type": "positive",
-        "magnitude": "6.000000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Fortify Lockpicking",
-        "type": "positive",
-        "magnitude": "0.400000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E94A0",
-    "name": "Ancient Void Salts",
-    "editorId": "DwaSpVoidSalts",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E94A0",
-    "imageKey": "ancient_void_salts",
-    "weight": "0.200000",
-    "value": "500",
-    "effects": [
-      {
-        "name": "Weakness to Shock",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "20",
-        "order": 1
-      },
-      {
-        "name": "Resist Magic",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Fortify Magicka",
-        "type": "positive",
-        "magnitude": "16.000000",
-        "duration": "300",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E949E",
-    "name": "Petrous Spider Egg",
-    "editorId": "DwaSpSpiderEgg",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E949E",
-    "imageKey": "petrous_spider_egg",
-    "weight": "0.200000",
-    "value": "5",
-    "effects": [
-      {
-        "name": "Damage Stamina",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Damage Magicka Regeneration",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Fortify Lockpicking",
-        "type": "positive",
-        "magnitude": "0.400000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Fortify Marksman",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E949C",
-    "name": "Ancient Fire Salts",
-    "editorId": "DwaSpFireSalts",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E949C",
-    "imageKey": "ancient_fire_salts",
-    "weight": "0.250000",
-    "value": "250",
-    "effects": [
-      {
-        "name": "Weakness to Frost",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "30",
-        "order": 1
-      },
-      {
-        "name": "Resist Fire",
-        "type": "positive",
-        "magnitude": "8.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Restore Magicka",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "20",
-        "order": 3
-      },
-      {
-        "name": "Fortify Magicka Regeneration",
-        "type": "positive",
-        "magnitude": "16.000000",
-        "duration": "300",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E949A",
-    "name": "Petrous Nordic Barnacle",
-    "editorId": "DwaSpNordicBarnacles",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E949A",
-    "imageKey": "petrous_nordic_barnacle",
-    "weight": "0.200000",
-    "value": "5",
-    "effects": [
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Waterbreathing",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "24",
-        "order": 2
-      },
-      {
-        "name": "Fortify Health Regeneration",
-        "type": "positive",
-        "magnitude": "16.000000",
-        "duration": "300",
-        "order": 3
-      },
-      {
-        "name": "Fortify Pickpocket",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E9498",
-    "name": "Ancient Frost Salts",
-    "editorId": "DwaSpFrostSalts",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E9498",
-    "imageKey": "ancient_frost_salts",
-    "weight": "0.250000",
-    "value": "400",
-    "effects": [
-      {
-        "name": "Weakness to Fire",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "30",
-        "order": 1
-      },
-      {
-        "name": "Resist Frost",
-        "type": "positive",
-        "magnitude": "8.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Restore Magicka",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "20",
-        "order": 3
-      },
-      {
-        "name": "Fortify Conjuration",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E9496",
-    "name": "Stale Frost Mirriam",
-    "editorId": "DwaSpFrostMirriam",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E9496",
-    "imageKey": "stale_frost_mirriam",
-    "weight": "0.100000",
-    "value": "1",
-    "effects": [
-      {
-        "name": "Resist Frost",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Fortify Sneak",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Damage Maximum Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 3
-      },
-      {
-        "name": "Damage Stamina Regeneration",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E9494",
-    "name": "Stale Moon Sugar",
-    "editorId": "DwaSpMoonSugar",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E9494",
-    "imageKey": "stale_moon_sugar",
-    "weight": "0.250000",
-    "value": "50",
-    "effects": [
-      {
-        "name": "Weakness to Fire",
-        "type": "negative",
-        "magnitude": "4.000000",
-        "duration": "30",
-        "order": 1
-      },
-      {
-        "name": "Resist Frost",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Restore Magicka",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "20",
-        "order": 3
-      },
-      {
-        "name": "Fortify Magicka Regeneration",
-        "type": "positive",
-        "magnitude": "16.000000",
-        "duration": "300",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E9492",
-    "name": "Pounded Hagraven Claw",
-    "editorId": "DwaSpHagravenClaw",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E9492",
-    "imageKey": "pounded_hagraven_claw",
-    "weight": "0.250000",
-    "value": "20",
-    "effects": [
-      {
-        "name": "Resist Magic",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Lingering Damage Magicka",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
-        "order": 2
-      },
-      {
-        "name": "Soul Trap",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "4",
-        "order": 3
-      },
-      {
-        "name": "Fortify Barter",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E948D",
-    "name": "Pounded Hawk Beak",
-    "editorId": "DwaSpHawkBeak",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E948D",
-    "imageKey": "pounded_hawk_beak",
-    "weight": "0.250000",
-    "value": "15",
-    "effects": [
-      {
-        "name": "Fortify Unarmed",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Resist Frost",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Fortify Carry Weight",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "600",
-        "order": 3
-      },
-      {
-        "name": "Resist Shock",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E948A",
-    "name": "Moldy Troll Fat",
-    "editorId": "DwaSpTrollFat",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E948A",
-    "imageKey": "moldy_troll_fat",
-    "weight": "1.000000",
-    "value": "25",
-    "effects": [
-      {
-        "name": "Resist Poison",
-        "type": "positive",
-        "magnitude": "6.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Fortify Two-Handed",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Frenzy",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
-        "order": 3
-      },
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E9487",
-    "name": "Stale Spriggan Sap",
-    "editorId": "DwaSpSprigganSap",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E9487",
-    "imageKey": "stale_spriggan_sap",
-    "weight": "0.200000",
-    "value": "50",
-    "effects": [
-      {
-        "name": "Silence",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "2",
-        "order": 1
-      },
-      {
-        "name": "Soul Trap",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "4",
-        "order": 2
-      },
-      {
-        "name": "Reflect Damage",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Fortify Alteration",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E9484",
-    "name": "Viscous Dwarven Oil",
-    "editorId": "DwaSpDwarvenOil",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E9484",
-    "imageKey": "viscous_dwarven_oil",
-    "weight": "0.250000",
-    "value": "50",
-    "effects": [
-      {
-        "name": "Weakness to Magic",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "30",
-        "order": 1
-      },
-      {
-        "name": "Fortify Illusion",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Fortify Magicka Regeneration",
-        "type": "positive",
-        "magnitude": "16.000000",
-        "duration": "300",
-        "order": 3
-      },
-      {
-        "name": "Restore Magicka",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "20",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Dwarfsphere.esp|059E947D",
-    "name": "Stale Crimson Nirnroot",
-    "editorId": "DwaSpNirnrootRed",
-    "plugin": "Dwarfsphere.esp",
-    "fixedFormId": "059E947D",
-    "imageKey": "stale_crimson_nirnroot",
-    "weight": "0.200000",
-    "value": "250",
-    "effects": [
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Damage Stamina",
-        "type": "negative",
-        "magnitude": "32.000000",
-        "duration": "0",
-        "order": 2
-      },
-      {
-        "name": "Invisibility",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "4",
-        "order": 3
-      },
-      {
-        "name": "Resist Magic",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "120",
         "order": 4
       }
     ]
@@ -6485,8 +6205,8 @@
     "editorId": "NecroArkayPriestHeart",
     "plugin": "Undeath.esp",
     "fixedFormId": "041D0061",
-    "imageKey": "priest_of_arkay's_heart",
-    "weight": "0.500000",
+    "imageKey": "priest_of_arkays_heart",
+    "weight": "0.400000",
     "value": "5",
     "effects": [
       {
@@ -6526,7 +6246,7 @@
     "plugin": "Journey to Baan Malur.esp",
     "fixedFormId": "076F728C",
     "imageKey": "ornada_egg",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "2",
     "effects": [
       {
@@ -6726,7 +6446,7 @@
     "plugin": "Journey to Baan Malur.esp",
     "fixedFormId": "070CC7BF",
     "imageKey": "potent_kwama_egg",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "560",
     "effects": [
       {
@@ -6926,7 +6646,7 @@
     "plugin": "Journey to Baan Malur.esp",
     "fixedFormId": "07096090",
     "imageKey": "felsaad_tern_egg",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "5",
     "effects": [
       {
@@ -7286,7 +7006,7 @@
     "plugin": "Journey to Baan Malur.esp",
     "fixedFormId": "070008CE",
     "imageKey": "clannfear_claw",
-    "weight": "0.550000",
+    "weight": "0.400000",
     "value": "60",
     "effects": [
       {
@@ -7446,7 +7166,7 @@
     "plugin": "Journey to Baan Malur.esp",
     "fixedFormId": "07000864",
     "imageKey": "scamp_skin",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -7475,46 +7195,6 @@
         "type": "negative",
         "magnitude": "8.000000",
         "duration": "0",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "EasierRidersDungeonPackSSE.esp|0465FB52",
-    "name": "Sulphur Bloom",
-    "editorId": "ERDPDLC01PoisonBloom",
-    "plugin": "EasierRidersDungeonPackSSE.esp",
-    "fixedFormId": "0465FB52",
-    "imageKey": "sulphur_bloom",
-    "weight": "0.250000",
-    "value": "5",
-    "effects": [
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Slow",
-        "type": "negative",
-        "magnitude": "50.000000",
-        "duration": "5",
-        "order": 2
-      },
-      {
-        "name": "Fortify Carry Weight",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "600",
-        "order": 3
-      },
-      {
-        "name": "Fear",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
         "order": 4
       }
     ]
@@ -7840,6 +7520,86 @@
     ]
   },
   {
+    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|080F6170",
+    "name": "Manic Lobsterfish",
+    "editorId": "EC_SS_LobsterfishMania",
+    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
+    "fixedFormId": "080F6170",
+    "imageKey": "manic_lobsterfish",
+    "weight": "0.400000",
+    "value": "44",
+    "effects": [
+      {
+        "name": "Waterbreathing",
+        "type": "positive",
+        "magnitude": "0.000000",
+        "duration": "48",
+        "order": 1
+      },
+      {
+        "name": "Weakness to Shock",
+        "type": "negative",
+        "magnitude": "4.000000",
+        "duration": "30",
+        "order": 2
+      },
+      {
+        "name": "Damage Maximum Magicka",
+        "type": "negative",
+        "magnitude": "32.000000",
+        "duration": "60",
+        "order": 3
+      },
+      {
+        "name": "Damage Stamina Regeneration",
+        "type": "negative",
+        "magnitude": "64.000000",
+        "duration": "60",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|080F616F",
+    "name": "Demented Lobsterfish",
+    "editorId": "EC_SS_LobsterfishDementia",
+    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
+    "fixedFormId": "080F616F",
+    "imageKey": "demented_lobsterfish",
+    "weight": "0.400000",
+    "value": "58",
+    "effects": [
+      {
+        "name": "Fortify Stamina Regeneration",
+        "type": "positive",
+        "magnitude": "32.000000",
+        "duration": "300",
+        "order": 1
+      },
+      {
+        "name": "Fortify Magicka",
+        "type": "positive",
+        "magnitude": "16.000000",
+        "duration": "300",
+        "order": 2
+      },
+      {
+        "name": "Resist Shock",
+        "type": "positive",
+        "magnitude": "8.000000",
+        "duration": "120",
+        "order": 3
+      },
+      {
+        "name": "Waterbreathing",
+        "type": "positive",
+        "magnitude": "0.000000",
+        "duration": "48",
+        "order": 4
+      }
+    ]
+  },
+  {
     "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|080B4552",
     "name": "Shroom Beetle Legs",
     "editorId": "EC_SS_ShroomBeetleLegs",
@@ -7874,6 +7634,126 @@
         "name": "Night Eye",
         "type": "positive",
         "magnitude": "0.000000",
+        "duration": "120",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|08066559",
+    "name": "Daggermouth Fin",
+    "editorId": "EC_SS_DaggermouthFin",
+    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
+    "fixedFormId": "08066559",
+    "imageKey": "daggermouth_fin",
+    "weight": "0.400000",
+    "value": "34",
+    "effects": [
+      {
+        "name": "Night Eye",
+        "type": "positive",
+        "magnitude": "0.000000",
+        "duration": "60",
+        "order": 1
+      },
+      {
+        "name": "Resist Poison",
+        "type": "positive",
+        "magnitude": "12.000000",
+        "duration": "120",
+        "order": 2
+      },
+      {
+        "name": "Lingering Damage Health",
+        "type": "negative",
+        "magnitude": "2.000000",
+        "duration": "15",
+        "order": 3
+      },
+      {
+        "name": "Cure Poison",
+        "type": "positive",
+        "magnitude": "4.000000",
+        "duration": "0",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|0802E3C9",
+    "name": "Manic Wing Dust",
+    "editorId": "EC_SS_ManicMudcrabDust",
+    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
+    "fixedFormId": "0802E3C9",
+    "imageKey": "manic_wing_dust",
+    "weight": "0.200000",
+    "value": "33",
+    "effects": [
+      {
+        "name": "Waterwalking",
+        "type": "positive",
+        "magnitude": "0.000000",
+        "duration": "48",
+        "order": 1
+      },
+      {
+        "name": "Damage Magicka",
+        "type": "negative",
+        "magnitude": "32.000000",
+        "duration": "0",
+        "order": 2
+      },
+      {
+        "name": "Fortify Carry Weight",
+        "type": "positive",
+        "magnitude": "8.000000",
+        "duration": "600",
+        "order": 3
+      },
+      {
+        "name": "Slow",
+        "type": "negative",
+        "magnitude": "8.000000",
+        "duration": "50",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "cceejsse005-cave.esm|05042A61",
+    "name": "Nightshade",
+    "editorId": "ccEEJSSE005_Nightshade",
+    "plugin": "cceejsse005-cave.esm",
+    "fixedFormId": "05042A61",
+    "imageKey": "nightshade",
+    "weight": "0.100000",
+    "value": "8",
+    "effects": [
+      {
+        "name": "Damage Health",
+        "type": "negative",
+        "magnitude": "8.000000",
+        "duration": "0",
+        "order": 1
+      },
+      {
+        "name": "Damage Magicka Regeneration",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 2
+      },
+      {
+        "name": "Lingering Damage Stamina",
+        "type": "negative",
+        "magnitude": "2.000000",
+        "duration": "15",
+        "order": 3
+      },
+      {
+        "name": "Fortify Destruction",
+        "type": "positive",
+        "magnitude": "2.000000",
         "duration": "120",
         "order": 4
       }
@@ -8686,7 +8566,7 @@
     "plugin": "Dragonborn.esm",
     "fixedFormId": "0201CD72",
     "imageKey": "netch_jelly",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "20",
     "effects": [
       {
@@ -8766,7 +8646,7 @@
     "plugin": "Dragonborn.esm",
     "fixedFormId": "0201CD6F",
     "imageKey": "boar_tusk",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "20",
     "effects": [
       {
@@ -8806,7 +8686,7 @@
     "plugin": "Dragonborn.esm",
     "fixedFormId": "0201CD6E",
     "imageKey": "burnt_spriggan_wood",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "20",
     "effects": [
       {
@@ -9000,12 +8880,12 @@
     ]
   },
   {
-    "identityKey": "HearthFires.esm|0200F1CC",
+    "identityKey": "HearthFires.esm|0300F1CC",
     "name": "Hawk's Egg",
     "editorId": "BYOHHawkEgg01",
     "plugin": "HearthFires.esm",
-    "fixedFormId": "0200F1CC",
-    "imageKey": "hawk's_egg",
+    "fixedFormId": "0300F1CC",
+    "imageKey": "hawks_egg",
     "weight": "0.100000",
     "value": "5",
     "effects": [
@@ -9040,11 +8920,11 @@
     ]
   },
   {
-    "identityKey": "HearthFires.esm|02003545",
+    "identityKey": "HearthFires.esm|03003545",
     "name": "Salmon Roe",
     "editorId": "BYOHSalmonRoe01",
     "plugin": "HearthFires.esm",
-    "fixedFormId": "02003545",
+    "fixedFormId": "03003545",
     "imageKey": "salmon_roe",
     "weight": "0.200000",
     "value": "5",
@@ -9245,7 +9125,7 @@
     "editorId": "DLC1MountainFlower01Yellow",
     "plugin": "Dawnguard.esm",
     "fixedFormId": "02002A78",
-    "imageKey": "arkay's_beacon",
+    "imageKey": "arkays_beacon",
     "weight": "0.100000",
     "value": "1",
     "effects": [
@@ -9446,7 +9326,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "00106E1B",
     "imageKey": "abecean_longfin",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "15",
     "effects": [
       {
@@ -9847,7 +9727,7 @@
     "fixedFormId": "000D8E3F",
     "imageKey": "moon_sugar",
     "weight": "0.250000",
-    "value": "50",
+    "value": "36",
     "effects": [
       {
         "name": "Weakness to Fire",
@@ -10006,7 +9886,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "000B18CD",
     "imageKey": "heart",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -10046,7 +9926,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "000B08C5",
     "imageKey": "honeycomb",
-    "weight": "0.500000",
+    "weight": "0.300000",
     "value": "12",
     "effects": [
       {
@@ -10126,7 +10006,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "000A9191",
     "imageKey": "beehive_husk",
-    "weight": "0.500000",
+    "weight": "0.300000",
     "value": "5",
     "effects": [
       {
@@ -10205,7 +10085,7 @@
     "editorId": "DragonsTongue",
     "plugin": "Skyrim.esm",
     "fixedFormId": "000889A2",
-    "imageKey": "dragon's_tongue",
+    "imageKey": "dragons_tongue",
     "weight": "0.100000",
     "value": "5",
     "effects": [
@@ -10605,7 +10485,7 @@
     "editorId": "MountainFlower01Purple",
     "plugin": "Skyrim.esm",
     "fixedFormId": "00077E1E",
-    "imageKey": "kyne's_boon",
+    "imageKey": "kynes_boon",
     "weight": "0.100000",
     "value": "1",
     "effects": [
@@ -10645,7 +10525,7 @@
     "editorId": "MountainFlower01Red",
     "plugin": "Skyrim.esm",
     "fixedFormId": "00077E1D",
-    "imageKey": "ysmir's_flame",
+    "imageKey": "ysmirs_flame",
     "weight": "0.100000",
     "value": "1",
     "effects": [
@@ -10685,7 +10565,7 @@
     "editorId": "MountainFlower01Blue",
     "plugin": "Skyrim.esm",
     "fixedFormId": "00077E1C",
-    "imageKey": "mara's_eye",
+    "imageKey": "maras_eye",
     "weight": "0.100000",
     "value": "1",
     "effects": [
@@ -10885,7 +10765,7 @@
     "editorId": "FavorThadgeirAshes",
     "plugin": "Skyrim.esm",
     "fixedFormId": "000705B7",
-    "imageKey": "berit's_ashes",
+    "imageKey": "berits_ashes",
     "weight": "0.200000",
     "value": "5",
     "effects": [
@@ -11046,7 +10926,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0006BC0B",
     "imageKey": "small_antlers",
-    "weight": "0.500000",
+    "weight": "0.200000",
     "value": "15",
     "effects": [
       {
@@ -11086,7 +10966,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0006BC0A",
     "imageKey": "large_antlers",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -11246,7 +11126,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0006BC00",
     "imageKey": "mudcrab_chitin",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "7",
     "effects": [
       {
@@ -11526,7 +11406,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "00052695",
     "imageKey": "charred_skeever_hide",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "1",
     "effects": [
       {
@@ -11555,6 +11435,46 @@
         "type": "positive",
         "magnitude": "1.000000",
         "duration": "20",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "identityKey": "Skyrim.esm|000516C8",
+    "name": "Deathbell",
+    "editorId": "deathBell",
+    "plugin": "Skyrim.esm",
+    "fixedFormId": "000516C8",
+    "imageKey": "deathbell",
+    "weight": "0.100000",
+    "value": "4",
+    "effects": [
+      {
+        "name": "Damage Health",
+        "type": "negative",
+        "magnitude": "12.000000",
+        "duration": "0",
+        "order": 1
+      },
+      {
+        "name": "Damage Maximum Stamina",
+        "type": "negative",
+        "magnitude": "16.000000",
+        "duration": "60",
+        "order": 2
+      },
+      {
+        "name": "Slow",
+        "type": "negative",
+        "magnitude": "50.000000",
+        "duration": "4",
+        "order": 3
+      },
+      {
+        "name": "Weakness to Poison",
+        "type": "negative",
+        "magnitude": "6.000000",
+        "duration": "30",
         "order": 4
       }
     ]
@@ -11685,7 +11605,7 @@
     "editorId": "Mushroom05",
     "plugin": "Skyrim.esm",
     "fixedFormId": "0004DA24",
-    "imageKey": "namira's_rot",
+    "imageKey": "namiras_rot",
     "weight": "0.250000",
     "value": "12",
     "effects": [
@@ -12046,7 +11966,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0003AD73",
     "imageKey": "glow_dust",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "20",
     "effects": [
       {
@@ -12086,7 +12006,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0003AD72",
     "imageKey": "troll_fat",
-    "weight": "1.000000",
+    "weight": "0.400000",
     "value": "25",
     "effects": [
       {
@@ -12126,7 +12046,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0003AD71",
     "imageKey": "taproot",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "15",
     "effects": [
       {
@@ -12325,8 +12245,8 @@
     "editorId": "GiantToes",
     "plugin": "Skyrim.esm",
     "fixedFormId": "0003AD64",
-    "imageKey": "giant's_toe",
-    "weight": "1.000000",
+    "imageKey": "giants_toe",
+    "weight": "0.400000",
     "value": "20",
     "effects": [
       {
@@ -12406,7 +12326,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0003AD61",
     "imageKey": "briar_heart",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "100",
     "effects": [
       {
@@ -12606,7 +12526,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0003AD5B",
     "imageKey": "daedra_heart",
-    "weight": "0.500000",
+    "weight": "0.400000",
     "value": "1500",
     "effects": [
       {
@@ -12846,7 +12766,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "00034CDD",
     "imageKey": "bone_meal",
-    "weight": "0.500000",
+    "weight": "0.250000",
     "value": "5",
     "effects": [
       {
@@ -12925,7 +12845,7 @@
     "editorId": "BirdEgg03",
     "plugin": "Skyrim.esm",
     "fixedFormId": "00023D77",
-    "imageKey": "chicken's_egg",
+    "imageKey": "chickens_egg",
     "weight": "0.125000",
     "value": "2",
     "effects": [
@@ -13006,7 +12926,7 @@
     "plugin": "Skyrim.esm",
     "fixedFormId": "0001BCBC",
     "imageKey": "jarrin_root",
-    "weight": "0.500000",
+    "weight": "0.250000",
     "value": "100",
     "effects": [
       {
@@ -13115,766 +13035,6 @@
         "type": "positive",
         "magnitude": "12.000000",
         "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Growl - Werebeasts of Skyrim.esp|04029051",
-    "name": "Werebeast Blood",
-    "editorId": "HRI_Lycan_Ingredient_WerewolfBlood",
-    "plugin": "Growl - Werebeasts of Skyrim.esp",
-    "fixedFormId": "04029051",
-    "imageKey": "werebeast_blood",
-    "weight": "0.500000",
-    "value": "150",
-    "effects": [
-      {
-        "name": "Beast Form",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "10",
-        "order": 1
-      },
-      {
-        "name": "Fortify Health",
-        "type": "positive",
-        "magnitude": "12.000000",
-        "duration": "300",
-        "order": 2
-      },
-      {
-        "name": "Frenzy",
-        "type": "negative",
-        "magnitude": "3.000000",
-        "duration": "15",
-        "order": 3
-      },
-      {
-        "name": "Fortify Health Regeneration",
-        "type": "positive",
-        "magnitude": "24.000000",
-        "duration": "300",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|02504494",
-    "name": "Scamp Ear (Dark)",
-    "editorId": "zzzCHScampEarDark",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "02504494",
-    "imageKey": "scamp_ear_(dark)",
-    "weight": "0.200000",
-    "value": "3",
-    "effects": [
-      {
-        "name": "Damage Magicka Regeneration",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 1
-      },
-      {
-        "name": "Damage Maximum Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Fortify Armor Rating",
-        "type": "positive",
-        "magnitude": "12.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|02500DEA",
-    "name": "Ogrim Fat",
-    "editorId": "zzzCHOgrimFat",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "02500DEA",
-    "imageKey": "ogrim_fat",
-    "weight": "0.100000",
-    "value": "25",
-    "effects": [
-      {
-        "name": "Restore Health",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "20",
-        "order": 1
-      },
-      {
-        "name": "Fortify Restoration",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Resist Poison",
-        "type": "positive",
-        "magnitude": "6.000000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|02220038",
-    "name": "White Flower",
-    "editorId": "zzzCHMountainFlower01White",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "02220038",
-    "imageKey": "white_flower",
-    "weight": "0.100000",
-    "value": "2",
-    "effects": [
-      {
-        "name": "Restore Health",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "20",
-        "order": 1
-      },
-      {
-        "name": "Fortify Conjuration",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Fortify Health",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "300",
-        "order": 3
-      },
-      {
-        "name": "Damage Magicka Regeneration",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|0212B2FB",
-    "name": "Heart of Order",
-    "editorId": "zzzCHOrderHeart",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "0212B2FB",
-    "imageKey": "heart_of_order",
-    "weight": "0.500000",
-    "value": "250",
-    "effects": [
-      {
-        "name": "Restore Health",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "20",
-        "order": 1
-      },
-      {
-        "name": "Damage Stamina Regeneration",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Fear",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|021001A2",
-    "name": "Iron Spider Egg",
-    "editorId": "zzzCHIronSpiderEgg",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "021001A2",
-    "imageKey": "iron_spider_egg",
-    "weight": "0.200000",
-    "value": "5",
-    "effects": [
-      {
-        "name": "Damage Stamina",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Damage Magicka Regeneration",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Fortify Lockpicking",
-        "type": "positive",
-        "magnitude": "0.400000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Fortify Marksman",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|020BF81C",
-    "name": "Cave Worm Egg",
-    "editorId": "zzzCHCaveWormEgg01",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "020BF81C",
-    "imageKey": "cave_worm_egg",
-    "weight": "0.200000",
-    "value": "3",
-    "effects": [
-      {
-        "name": "Resist Poison",
-        "type": "positive",
-        "magnitude": "6.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Fortify Pickpocket",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Lingering Damage Health",
-        "type": "negative",
-        "magnitude": "1.000000",
-        "duration": "15",
-        "order": 3
-      },
-      {
-        "name": "Fortify Stamina",
-        "type": "positive",
-        "magnitude": "8.000000",
-        "duration": "300",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|020B71E3",
-    "name": "Scamp Ear",
-    "editorId": "zzzCHScampEar",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "020B71E3",
-    "imageKey": "scamp_ear",
-    "weight": "0.200000",
-    "value": "3",
-    "effects": [
-      {
-        "name": "Damage Stamina Regeneration",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "60",
-        "order": 1
-      },
-      {
-        "name": "Damage Maximum Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "8.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Fortify Armor Rating",
-        "type": "positive",
-        "magnitude": "12.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|020B4E96",
-    "name": "Sand Runner Egg",
-    "editorId": "zzzCHSandRunnerEggs",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "020B4E96",
-    "imageKey": "sand_runner_egg",
-    "weight": "0.200000",
-    "value": "10",
-    "effects": [
-      {
-        "name": "Invisibility",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "4",
-        "order": 1
-      },
-      {
-        "name": "Fortify Stamina",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Cure Poison",
-        "type": "positive",
-        "magnitude": "1.000000",
-        "duration": "0",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|0203B0F7",
-    "name": "Plague Raven Claw",
-    "editorId": "zzzCHPlagueRavenClaw",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "0203B0F7",
-    "imageKey": "plague_raven_claw",
-    "weight": "0.250000",
-    "value": "20",
-    "effects": [
-      {
-        "name": "Resist Magic",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "120",
-        "order": 1
-      },
-      {
-        "name": "Lingering Damage Magicka",
-        "type": "negative",
-        "magnitude": "1.000000",
-        "duration": "30",
-        "order": 2
-      },
-      {
-        "name": "Fortify Enchanting",
-        "type": "positive",
-        "magnitude": "20.000000",
-        "duration": "120",
-        "order": 3
-      },
-      {
-        "name": "Fortify Barter",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "120",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Vigilant.esm|0203B0F6",
-    "name": "Plague Raven Feathers",
-    "editorId": "zzzCHPlagueRavenFeathers",
-    "plugin": "Vigilant.esm",
-    "fixedFormId": "0203B0F6",
-    "imageKey": "plague_raven_feathers",
-    "weight": "0.100000",
-    "value": "20",
-    "effects": [
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "16.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Fortify Conjuration",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "120",
-        "order": 2
-      },
-      {
-        "name": "Frenzy",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "15",
-        "order": 3
-      },
-      {
-        "name": "Weakness to Shock",
-        "type": "negative",
-        "magnitude": "4.000000",
-        "duration": "30",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|080F616F",
-    "name": "Demented Lobsterfish",
-    "editorId": "EC_SS_LobsterfishDementia",
-    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
-    "fixedFormId": "080F616F",
-    "imageKey": "demented_lobsterfish",
-    "weight": "0.500000",
-    "value": "35",
-    "effects": [
-      {
-        "name": "Regenerate Stamina",
-        "type": "positive",
-        "magnitude": "5.000000",
-        "duration": "300",
-        "order": 1
-      },
-      {
-        "name": "Fortify Magicka",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Resist Shock",
-        "type": "positive",
-        "magnitude": "3.000000",
-        "duration": "60",
-        "order": 3
-      },
-      {
-        "name": "Waterbreathing",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "5",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|08066559",
-    "name": "Daggermouth Fin",
-    "editorId": "EC_SS_DaggermouthFin",
-    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
-    "fixedFormId": "08066559",
-    "imageKey": "daggermouth_fin",
-    "weight": "0.500000",
-    "value": "10",
-    "effects": [
-      {
-        "name": "Night Eye",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "60",
-        "order": 1
-      },
-      {
-        "name": "Resist Poison",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Lingering Damage Health",
-        "type": "negative",
-        "magnitude": "1.000000",
-        "duration": "10",
-        "order": 3
-      },
-      {
-        "name": "Cure Poison",
-        "type": "positive",
-        "magnitude": "5.000000",
-        "duration": "0",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|0802E3C9",
-    "name": "Manic Wing Dust",
-    "editorId": "EC_SS_ManicMudcrabDust",
-    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
-    "fixedFormId": "0802E3C9",
-    "imageKey": "manic_wing_dust",
-    "weight": "0.200000",
-    "value": "10",
-    "effects": [
-      {
-        "name": "Waterwalking",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "5",
-        "order": 1
-      },
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "3.000000",
-        "duration": "0",
-        "order": 2
-      },
-      {
-        "name": "Fortify Carry Weight",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "300",
-        "order": 3
-      },
-      {
-        "name": "Slow",
-        "type": "negative",
-        "magnitude": "50.000000",
-        "duration": "5",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "Skyrim Extended Cut - Saints and Seducers.esp|080F6170",
-    "name": "Manic Lobsterfish",
-    "editorId": "EC_SS_LobsterfishMania",
-    "plugin": "Skyrim Extended Cut - Saints and Seducers.esp",
-    "fixedFormId": "080F6170",
-    "imageKey": "manic_lobsterfish",
-    "weight": "0.500000",
-    "value": "35",
-    "effects": [
-      {
-        "name": "Waterbreathing",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "5",
-        "order": 1
-      },
-      {
-        "name": "Weakness to Shock",
-        "type": "negative",
-        "magnitude": "3.000000",
-        "duration": "30",
-        "order": 2
-      },
-      {
-        "name": "Ravage Magicka",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "10",
-        "order": 3
-      },
-      {
-        "name": "Damage Stamina Regen",
-        "type": "negative",
-        "magnitude": "100.000000",
-        "duration": "5",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "_ResourcePack.esl|030000D0",
-    "name": "Aloe Vera Leaves",
-    "editorId": "RP_AloeVeraLeaves01",
-    "plugin": "_ResourcePack.esl",
-    "fixedFormId": "030000D0",
-    "imageKey": "aloe_vera_leaves",
-    "weight": "0.100000",
-    "value": "1",
-    "effects": [
-      {
-        "name": "Restore Health",
-        "type": "positive",
-        "magnitude": "5.000000",
-        "duration": "0",
-        "order": 1
-      },
-      {
-        "name": "Restore Stamina",
-        "type": "positive",
-        "magnitude": "5.000000",
-        "duration": "0",
-        "order": 2
-      },
-      {
-        "name": "Damage Magicka",
-        "type": "negative",
-        "magnitude": "5.000000",
-        "duration": "0",
-        "order": 3
-      },
-      {
-        "name": "Invisibility",
-        "type": "positive",
-        "magnitude": "0.000000",
-        "duration": "2",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "cckrtsse001_altar.esl|05000F86",
-    "name": "Healing Salts",
-    "editorId": "ccKRTSSE001_SaltPile",
-    "plugin": "cckrtsse001_altar.esl",
-    "fixedFormId": "05000F86",
-    "imageKey": "healing_salts",
-    "weight": "0.200000",
-    "value": "2",
-    "effects": [
-      {
-        "name": "Weakness to Magic",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "30",
-        "order": 1
-      },
-      {
-        "name": "Fortify Restoration",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "60",
-        "order": 2
-      },
-      {
-        "name": "Slow",
-        "type": "negative",
-        "magnitude": "50.000000",
-        "duration": "5",
-        "order": 3
-      },
-      {
-        "name": "Regenerate Magicka",
-        "type": "positive",
-        "magnitude": "5.000000",
-        "duration": "300",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "cceejsse005-cave.esm|05042A61",
-    "name": "Nightshade",
-    "editorId": "ccEEJSSE005_Nightshade",
-    "plugin": "cceejsse005-cave.esm",
-    "fixedFormId": "05042A61",
-    "imageKey": "nightshade",
-    "weight": "0.100000",
-    "value": "8",
-    "effects": [
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "2.000000",
-        "duration": "1",
-        "order": 1
-      },
-      {
-        "name": "Damage Magicka Regen",
-        "type": "negative",
-        "magnitude": "100.000000",
-        "duration": "5",
-        "order": 2
-      },
-      {
-        "name": "Lingering Damage Stamina",
-        "type": "negative",
-        "magnitude": "1.000000",
-        "duration": "10",
-        "order": 3
-      },
-      {
-        "name": "Fortify Destruction",
-        "type": "positive",
-        "magnitude": "4.000000",
-        "duration": "60",
-        "order": 4
-      }
-    ]
-  },
-  {
-    "identityKey": "ccBGSSSE037-Curios.esl|0500080F",
-    "name": "Imp Gall",
-    "editorId": "ccBGSSSE037_ImpGall",
-    "plugin": "ccBGSSSE037-Curios.esl",
-    "fixedFormId": "0500080F",
-    "imageKey": "imp_gall",
-    "weight": "0.200000",
-    "value": "15",
-    "effects": [
-      {
-        "name": "Damage Health",
-        "type": "negative",
-        "magnitude": "3.000000",
-        "duration": "1",
-        "order": 1
-      },
-      {
-        "name": "Weakness to Fire",
-        "type": "negative",
-        "magnitude": "4.000000",
-        "duration": "30",
-        "order": 2
-      },
-      {
-        "name": "Fortify Barter",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "30",
-        "order": 3
-      },
-      {
-        "name": "Cure Poison",
-        "type": "positive",
-        "magnitude": "2.000000",
-        "duration": "0",
         "order": 4
       }
     ]
