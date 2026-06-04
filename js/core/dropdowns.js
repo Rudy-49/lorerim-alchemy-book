@@ -38,6 +38,12 @@ function createSearchDropdown({
     document.body.classList.remove("keyboard-open");
   }
 
+  function clearInputAndReset() {
+    input.value = "";
+    showDropdown("");
+    onEmpty?.();
+  }
+
   function scrollIntoViewSafe() {
     if (!scrollTargetSelector) return;
 
@@ -55,13 +61,11 @@ function createSearchDropdown({
 
   input.addEventListener("focus", () => {
     scrollIntoViewSafe();
-    input.select();
-    showDropdown("");
+    clearInputAndReset();
   });
 
   input.addEventListener("click", () => {
-    input.select();
-    showDropdown(input.value);
+    clearInputAndReset();
   });
 
   input.addEventListener("input", () => {

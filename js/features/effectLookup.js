@@ -79,6 +79,8 @@ function initEffectLookup(ingredients) {
     },
 
     onSelect: effectName => {
+      trackAction("Effect Search");
+      
       const effect =
         effectMap.get(effectName.trim().toLowerCase());
 

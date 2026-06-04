@@ -66,6 +66,10 @@
   padding-bottom: 0.5rem;
 }
 
+.collection-result-row:last-child {
+  margin-bottom: 0.75rem;
+}
+
 .collection-header-row {
   flex: 0 0 auto;
 }

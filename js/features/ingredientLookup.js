@@ -96,6 +96,7 @@ function initIngredientLookup(ingredients) {
     },
 
     onSelect: ingredientName => {
+      trackAction("Ingredient Search");
       const ingredient =
         ingredientMap.get(ingredientName.trim().toLowerCase());
 

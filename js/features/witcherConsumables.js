@@ -84,7 +84,18 @@ function renderWitcherConsumablesPage() {
 
   document.querySelectorAll(".witcher-tab-btn").forEach(button => {
     button.addEventListener("click", event => {
-      currentWitcherTab = event.currentTarget.dataset.tab;
+      const selectedTab = event.currentTarget.dataset.tab;
+
+      if (selectedTab === currentWitcherTab) return;
+
+      currentWitcherTab = selectedTab;
+
+      if (currentWitcherTab === "search") {
+        trackFeatureOpen("Witcher Search");
+      } else if (currentWitcherTab === "tracked") {
+        trackFeatureOpen("Witcher Tracked Ingredients");
+      }
+
       renderWitcherConsumablesPage();
     });
   });
@@ -179,6 +190,8 @@ function bindTrackedWitcherButtons() {
 
         const ingredientName = event.currentTarget.dataset.name;
 
+        trackAction("Track Witcher Ingredient");
+
         toggleTrackedWitcherIngredient(ingredientName);
 
         renderWitcherConsumablesPage();
@@ -215,6 +228,7 @@ function initWitcherDropdown(primaryEffects) {
     },
 
     onSelect: () => {
+      trackAction("Witcher Search");
       updateWitcherConsumablesResults();
     }
   });
@@ -391,6 +405,8 @@ function updateWitcherConsumablesResults() {
 
         const ingredientName =
           event.currentTarget.dataset.name;
+
+        trackAction("Track Witcher Ingredient");
 
         toggleTrackedWitcherIngredient(
           ingredientName

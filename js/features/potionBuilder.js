@@ -89,10 +89,9 @@ function initPotionBuilder() {
 
   const sortedIngredients = [...ingredients].sort((a, b) => a.name.localeCompare(b.name));
 
-  function focusAndSelect(input) {
+  function focusInput(input) {
     setTimeout(() => {
       input.focus();
-      input.select?.();
     }, 0);
   }
 
@@ -232,7 +231,7 @@ function initPotionBuilder() {
     document.body.classList.remove("keyboard-open");
 
     updatePreview();
-    focusAndSelect(input1);
+    focusInput(input1);
   }
 
   function renderDropdown(dropdown, list, filter = "") {
@@ -281,8 +280,8 @@ function initPotionBuilder() {
         });
       }, 350);
 
-      input.select();
-      renderDropdown(dropdown, getList(), input.value);
+      input.value = "";
+      renderDropdown(dropdown, getList(), "");
     });
 
     input.addEventListener("blur", () => {
@@ -295,8 +294,8 @@ function initPotionBuilder() {
     input.addEventListener("click", () => {
       if (input.disabled) return;
 
-      input.select();
-      renderDropdown(dropdown, getList(), input.value);
+      input.value = "";
+      renderDropdown(dropdown, getList(), "");
     });
 
     input.addEventListener("input", () => {
@@ -371,7 +370,7 @@ function initPotionBuilder() {
     input2.value = "";
     input3.value = "";
 
-    focusAndSelect(input2);
+    focusInput(input2);
   });
 
   setupDropdown(input2, dropdown2, () =>
@@ -386,7 +385,7 @@ function initPotionBuilder() {
       input3.disabled = false;
       input3.value = "";
 
-      focusAndSelect(input3);
+      focusInput(input3);
     }
   );
 
@@ -459,6 +458,7 @@ function initPotionBuilder() {
 
     saved.unshift(potion);
     savePotionsToStorage(saved);
+    trackAction("Save Potion");
     clearPotionBuilder();
 
     if (isMobileView()) {

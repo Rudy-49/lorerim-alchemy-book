@@ -78,7 +78,7 @@ const spreads = [
         <p class="toc-footer-note">Tap an entry to navigate</p>
 
         <div class="toc-version">
-          Built for <strong>LoreRim 4.5.3</strong>
+          Built for <strong>LoreRim 5.0</strong>
         </div>
       </div>
     `,
@@ -142,7 +142,7 @@ const spreads = [
         <div class="changelog-list">
 
           <div class="changelog-entry changelog-version">
-            <h3>LoreRim 4.5.3</h3>
+            <h3>LoreRim 5.0</h3>
           </div>
 
           <div class="changelog-entry">
@@ -158,11 +158,22 @@ const spreads = [
           </div>
 
           <div class="changelog-entry">
+            <h4>Recent Work</h4>
+            <ul>
+              <li>LoreRim 5.0 ingredient and effect data update</li>
+              <li>Tracked Witcher Ingredients page</li>
+              <li>Ingredients to Collect page</li>
+              <li>Mobile UI improvements</li>
+            </ul>
+          </div>
+
+          <div class="changelog-entry">
             <h4>Coming Next</h4>
             <ul>
-              <li>LoreRim 5.0 data migration</li>
-              <li>Version tracking for saved potions</li>
-              <li>More trait and optimization notes</li>
+              <li>Potion Builder quality-of-life improvements</li>
+              <li>Ingredient information panel</li>
+              <li>Potion contribution breakdown</li>
+              <li>Additional optimization and build tools</li>
             </ul>
           </div>
 
