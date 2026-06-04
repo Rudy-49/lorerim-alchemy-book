@@ -127,6 +127,8 @@ function exportPotionsJSON() {
     return;
   }
 
+  trackAction("Export Potions");
+
   const selectedIds = getSelectedPotionIds();
 
   if (selectedIds.length === 0) {
@@ -183,6 +185,8 @@ function exportPotionsJSON() {
 function importPotionsJSON(event) {
   const file = event.target.files[0];
   if (!file) return;
+
+  trackAction("Import Potions");
 
   const reader = new FileReader();
 

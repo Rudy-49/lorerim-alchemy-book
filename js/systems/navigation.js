@@ -37,16 +37,27 @@ function renderSpread() {
 function renderSpecialPages() {
   if (isMobileView()) {
     if (currentSpread === 1 && currentMobileSide === "left") {
+      trackFeatureOpen("Potion Builder");
       renderPotionBuilderPage();
+
     } else if (currentSpread === 1 && currentMobileSide === "right") {
+      trackFeatureOpen("Potion Database");
       renderPotionDatabasePage();
+
     } else if (currentSpread === 2 && currentMobileSide === "left") {
+      trackFeatureOpen("Ingredient Lookup");
       renderIngredientLookupPage();
+
     } else if (currentSpread === 2 && currentMobileSide === "right") {
+      trackFeatureOpen("Effect Lookup");
       renderEffectLookupPage();
+
     } else if (currentSpread === 3 && currentMobileSide === "left") {
+      trackFeatureOpen("Witcher Consumables");
       renderWitcherConsumablesPage();
+
     } else if (currentSpread === 3 && currentMobileSide === "right") {
+      trackFeatureOpen("Ingredients to Collect");
       renderIngredientCollectionPage();
     }
 
@@ -54,17 +65,27 @@ function renderSpecialPages() {
   }
 
   if (currentSpread === 1) {
+    trackFeatureOpen("Potion Builder");
+    trackFeatureOpen("Potion Database");
+
     renderPotionBuilderPage();
     renderPotionDatabasePage();
+
   } else if (currentSpread === 2) {
+    trackFeatureOpen("Ingredient Lookup");
+    trackFeatureOpen("Effect Lookup");
+
     renderIngredientLookupPage();
     renderEffectLookupPage();
+
   } else if (currentSpread === 3) {
+    trackFeatureOpen("Witcher Consumables");
+    trackFeatureOpen("Ingredients to Collect");
+
     renderWitcherConsumablesPage();
     renderIngredientCollectionPage();
   }
 }
-
 
 // =========================
 // TABLE OF CONTENTS
