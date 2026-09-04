@@ -64,7 +64,7 @@
         "order": 2
       },
       {
-        "name": "Tardiness",
+        "name": "Slow",
         "type": "negative",
         "magnitude": "50.000000",
         "duration": "4",

@@ -255,7 +255,7 @@ function handleHerbalistToggle(event) {
 function getWitcherConsumableMultiplier() {
   let multiplier = 1;
 
-  if (document.getElementById("witcherTraitToggle")?.checked) multiplier *= 3;
+  if (document.getElementById("witcherTraitToggle")?.checked) multiplier *= 1.25;
   if (document.getElementById("herbalistOneToggle")?.checked) multiplier *= 2;
   if (document.getElementById("herbalistTwoToggle")?.checked) multiplier *= 5;
 
